@@ -43,7 +43,7 @@ BLUE	=	\033[34m
 
 
 # Recipies
-all:		libft printf $(NAME)
+all:		$(NAME)
 
 $(BUILD):
 				@mkdir $(BUILD)
@@ -56,12 +56,6 @@ $(NAME):	$(BUILD) $(OBJS)
 				@echo "${GREEN}Archiving parse.${RESET}"
 				@$(AR) $@ $(OBJS)
 				@echo "${GREEN}Archive Successfull.${RESET}"
-
-libft:
-				@$(MAKE) $(MGOALS) -C ../libft
-
-printf:
-				@$(MAKE) $(MGOALS) -C ../printf
 
 clean:
 				@echo "${YELLOW}Cleaning Build...${RESET}"
@@ -76,4 +70,4 @@ fclean:
 
 re:			fclean all
 
-.PHONY:		all clean fclean re libft printf
+.PHONY:		all clean fclean re
