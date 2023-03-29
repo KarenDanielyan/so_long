@@ -6,17 +6,11 @@ BUILD		=	./build
 
 SRC			=	./source
 
-SRC_B		=	./source_b
-
 DEP			=	$(INCLUDE)/ft_printf.h Makefile
 
 SOURCES		=	$(wildcard $(SRC)/*.c)
 
-SOURCES_B	=	$(wildcard $(SRC_B)/*.c)
-
 OBJS		=	$(patsubst $(SRC)/%.c, $(BUILD)/%.o, $(SOURCES))
-
-OBJS_B		=	$(patsubst $(SRC_B)/%.c, $(BUILD)/%.o, $(SOURCES_B))
 
 CC 			= 	cc
 
@@ -24,7 +18,7 @@ RM			=	rm -rf
 
 CFLAGS		=	-g3 -Wall -Wextra -Werror -Wpedantic
 
-LFLAGS		=	-L./ -lftprintf
+LFLAGS		=
 
 IFLAGS		=	-I./include
 
@@ -45,9 +39,6 @@ $(NAME):	$(BUILD) $(OBJS)
 				@echo "Building printf..."
 				@$(AR) $(NAME) $(OBJS)
 				@echo Done.
-
-bonus:		fclean $(BUILD) $(OBJS_B)
-				@$(AR) $(NAME) $(OBJS_B)
 
 clean:		
 				@$(RM) $(OBJS)

@@ -1,64 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 17:49:40 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/07 14:04:41 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/03/29 14:21:30 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/03/29 14:52:47 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
+#include "helper.h"
 
-static int	check_flag(const char *s, va_list args, char bonus)
+static int	check_flag(int fd, const char *s, va_list args)
 {
 	int	count;
 
 	count = 0;
 	if (*s == 'd' || *s == 'i')
-		count += ft_putnbr(va_arg(args, int), bonus);
+		count += ft_putnbr_fd(fd, va_arg(args, int));
 	else if (*s == 'u')
-		count += ft_putunbr(va_arg(args, unsigned int));
+		count += ft_putunbr_fd(fd, va_arg(args, unsigned int));
 	else if (*s == 's')
-		count += ft_putstr(va_arg(args, char *), bonus, s);
+		count += ft_putstr_fd(fd, va_arg(args, char *));
 	else if (*s == 'c')
-		count += ft_putchar(va_arg(args, int));
+		count += ft_putchar_fd(fd, va_arg(args, int));
 	else if (*s == 'p')
 	{
-		write(STDOUT_FILENO, "0x", 2);
-		count += ft_putptr(va_arg(args, uintptr_t), L_HEX) + 2;
+		write(fd, "0x", 2);
+		count += ft_putptr_fd(fd, va_arg(args, uintptr_t), L_HEX) + 2;
 	}
 	else if (*s == 'x' || *s == 'X')
-		count += ft_puthex(va_arg(args, unsigned int), s, bonus);
+		count += ft_puthex_fd(fd, va_arg(args, unsigned int), s);
 	else if (*s == '%')
 	{
 		count += 1;
-		write(STDOUT_FILENO, "%", 1);
+		write(fd, "%", 1);
 	}
 	return (count);
 }
 
-static char	*on_f(char *s, va_list args, int *count)
+static char	*on_f(int fd, char *s, va_list args, int *count)
 {
-	char	bonus;
-
-	bonus = 0;
 	if (*s == '%')
 	{
 		s++;
 		while (*s && !ft_strchr(FORMAT_FLAGS, *s) && !ft_strchr(ESCAPE_SEQ, *s))
-		{
-			if (ft_strchr(BONUS, *s))
-				bonus = *s;
 			s ++;
-		}
 		if (ft_strchr(FORMAT_FLAGS, *s))
-			*count += check_flag(s, args, bonus);
+			*count += check_flag(fd, s, args);
 		else if (ft_strchr(ESCAPE_SEQ, *s))
 		{
-			write(STDOUT_FILENO, s, 1);
+			write(fd, s, 1);
 			(*count)++;
 		}
 		s++;
@@ -66,7 +60,7 @@ static char	*on_f(char *s, va_list args, int *count)
 	return (s);
 }
 
-int	ft_printf(const char *str, ...)
+int	ft_dprintf(int fd, const char *str, ...)
 {
 	va_list	args;
 	int		count;
@@ -80,10 +74,10 @@ int	ft_printf(const char *str, ...)
 	s = (char *)str;
 	while (*s)
 	{
-		tmp = on_f(s, args, &count);
+		tmp = on_f(fd, s, args, &count);
 		if (tmp == s)
 		{
-			write(STDOUT_FILENO, s, 1);
+			write(fd, s, 1);
 			s ++;
 			count ++;
 		}

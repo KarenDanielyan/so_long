@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
+/*   helper.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 17:47:39 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/07 13:48:33 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/03/29 14:24:44 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/03/29 14:41:23 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_BONUS_H
-# define FT_PRINTF_BONUS_H
+#ifndef HELPER_H
+# define HELPER_H
 
 # include <stdarg.h>
 # include <stdlib.h>
@@ -20,7 +20,6 @@
 # include <stdint.h>
 
 # define OFFSET			'0'
-# define BONUS			"# +"
 # define FORMAT_FLAGS 	"cspdiuxX%"
 # define ESCAPE_SEQ		"\\\"\t\b\a\?\r\f\v\n"
 # define DECIMAL		"0123456789"
@@ -32,16 +31,13 @@
 char	*ft_itoa_base(long n, const char *base);
 char	*ft_strchr(const char *str, int c);
 
-int		ft_putchar(char c);
-int		ft_putunbr(unsigned int nbr);
-int		ft_putnbr(int nbr, char bonus);
-int		ft_putptr(uintptr_t ptr, char *base);
-int		ft_putstr(char *str, char bonus, const char *s);
-int		ft_puthex(unsigned int nbr, const char *f_str, char bonus);
+int		ft_putchar_fd(int fd, char c);
+int		ft_putunbr_fd(int fd, unsigned int nbr);
+int		ft_putnbr_fd(int fd, int nbr);
+int		ft_putptr_fd(int fd, uintptr_t ptr, char *base);
+int		ft_putstr_fd(int fd, char *str);
+int		ft_puthex_fd(int fd, unsigned int nbr, const char *f_str);
 
 size_t	ft_strlen(const char *str);
-
-/* Printf */
-int		ft_printf(const char *s, ...);
 
 #endif

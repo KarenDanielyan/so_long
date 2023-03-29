@@ -6,14 +6,14 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:11:06 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/07 14:03:53 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/29 14:31:48 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "helper.h"
 
-int	ft_putchar(char c)
+int	ft_putchar_fd(int fd, char c)
 {
-	write(STDOUT_FILENO, &c, 1);
+	write(fd, &c, 1);
 	return (1);
 }

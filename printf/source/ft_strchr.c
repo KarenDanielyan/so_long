@@ -6,11 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 23:35:43 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/07 14:04:05 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/29 14:29:42 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "helper.h"
 
 char	*ft_strchr(const char *str, int c)
 {
