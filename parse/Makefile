@@ -1,14 +1,17 @@
 # Program and it's dependencies
 
-NAME	=	so_long
+NAME	=	libparse.a
 
 INCLUDE	=	./include
+
+BIN		=	../bin
 
 BUILD	=	./build
 
 DIR		=	./src
 
-FILES	=	main.c
+FILES	=	parse.c extension_check.c invalid_char_check.c one_start_exit_check.c \
+			wall_check.c rectangle_check.c valid_path_check.c
 
 DEP		=	$(wildcard $(INCLUDE)/*.h) Makefile
 
@@ -18,17 +21,17 @@ OBJS	=	$(patsubst $(DIR)/%.c, $(BUILD)/%.o, $(SRC))
 
 # Compilation options
 
+AR		=	ar rcs
+
 CC 		= 	cc
 
 RM		=	rm -rf
 
-CFLAGS	=	-g -fsanitize=address -Wall -Wextra -Werror
+CFLAGS	=	-g -fsanitize=address -Wall -Wextra -Werror -Wpedantic
 
-LFLAGS	=	-L./libft -lft -L./printf -lftprintf -L./parse -lparse -Wl,-rpath,.
+LFLAGS	=	-L../libft -lft -L../printf -lftprintf
 
-IFLAGS	=	-I./include -I./libft -I./printf/include -I./parse/include
-
-MGOALS	=	$(filter-out bonus, $(MAKECMDGOALS))
+IFLAGS	=	-I./include -I../libft -I../printf/include -I../include
 
 # Colors
 
@@ -40,7 +43,7 @@ BLUE	=	\033[34m
 
 
 # Recipies
-all:		libft printf parse $(NAME)
+all:		libft printf $(NAME)
 
 $(BUILD):
 				@mkdir $(BUILD)
@@ -50,28 +53,22 @@ $(BUILD)/%.o:	$(DIR)/%.c $(DEP)
 					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(NAME):	$(BUILD) $(OBJS)
-				@echo "${GREEN}Building so_long.${RESET}"
-				@$(CC) $(CFLAGS) $(OBJS) $(IFLAGS) -o $(NAME) $(LFLAGS)
-				@echo "${GREEN}Build Successfull.${RESET}"
+				@echo "${GREEN}Archiving parse.${RESET}"
+				@$(AR) $@ $(OBJS)
+				@echo "${GREEN}Archive Successfull.${RESET}"
 
 libft:
-				@$(MAKE) $(MGOALS) -C libft
+				@$(MAKE) $(MGOALS) -C ../libft
 
 printf:
-				@$(MAKE) $(MGOALS) -C printf
+				@$(MAKE) $(MGOALS) -C ../printf
 
-parse:
-				@$(MAKE) $(MGOALS) -C parse
-
-wait_msg:
-				@echo "${BLUE}Please wait for pipex to compile.${RESET}"
-
-clean:		printf libft
+clean:
 				@echo "${YELLOW}Cleaning Build...${RESET}"
 				@$(RM) $(BUILD)
 				@echo "${GREEN}Done.${RESET}"
 
-fclean:		printf libft
+fclean:
 				@echo "${YELLOW}Cleaning Everyting...${RESET}"
 				@$(RM) $(BUILD)
 				@$(RM) $(NAME)
@@ -79,4 +76,4 @@ fclean:		printf libft
 
 re:			fclean all
 
-.PHONY:		all clean fclean re libft printf parse
+.PHONY:		all clean fclean re libft printf

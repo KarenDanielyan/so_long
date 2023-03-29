@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   invalid_char_check.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 18:41:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/29 20:21:16 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/03/29 19:50:15 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/03/29 19:57:34 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
-#include <parse.h>
+#include "helpers.h"
 
-int	main(void)
+void	invalid_char_check(char **map)
 {
-	ft_dprintf(STDOUT_FILENO, "Hello World\n");
-	parse(NULL);
-	return (0);
+	(void)map;
 }

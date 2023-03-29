@@ -4,6 +4,8 @@
             "name": "linux-gcc-x64",
             "includePath": [
                 "${workspaceFolder}/include",
+                "${workspaceFolder}/parse/include",
+                "${workspaceFolder}/parse/**",
                 "${workspaceFolder}/libft",
                 "${workspaceFolder}/libft/**",
                 "${workspaceFolder}/printf",

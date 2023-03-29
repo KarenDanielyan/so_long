@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 18:41:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/29 20:21:16 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/03/29 18:59:51 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/03/29 19:56:44 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
-#include <parse.h>
+#ifndef PARSE_H
+# define PARSE_H
 
-int	main(void)
-{
-	ft_dprintf(STDOUT_FILENO, "Hello World\n");
-	parse(NULL);
-	return (0);
-}
+/*
+*	Descirpion: This function parses the provided map
+*	and return it in double char array on success.
+*	Program will terminate otherwise.
+*/
+char	**parse(char *file);
+
+#endif
