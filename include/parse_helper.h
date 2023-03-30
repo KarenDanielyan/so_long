@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:27:31 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 15:27:49 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:41:57 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,19 @@ void	valid_path_check(char **map);
 /* Additional functions */
 
 // TODO: Add flood_fill()
+
+/*
+*	Reference: DNE
+*
+*	Description: Returns a line read from file pointed by
+*	file descriptor. If fd is invalid, function returns
+*	NULL;
+*	NOTE: In order to not have leaks, run get_next_line() function
+*	with -42 parameter in order to free the static allocated space
+*	before ending program execution.
+*
+*	Return Value: C-standard string with nl, or NULL on invalid fd.
+*/
+char	*get_next_line(int fd);
 
 #endif
