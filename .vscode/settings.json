@@ -77,7 +77,9 @@
     "fcntl.h": "c",
     "chrono": "c",
     "get_next_line.h": "c",
-    "ft_printf.h": "c"
+    "ft_printf.h": "c",
+    "map": "c",
+    "system_error": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
