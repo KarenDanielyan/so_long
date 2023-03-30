@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:27:31 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 18:25:51 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 19:24:04 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,18 @@
 
 # include <ft_printf.h>
 # include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
 # include <fcntl.h>
 # include <libft.h>
 # include <errno.h>
+
+
+# ifndef BONUS
+
+#  define MAPSYMS "01CEP"
+# else
+
+#  define MAPSYMS "01CEP"
+# endif
 
 /*
 *	Description: extension_check() checks whether provided
@@ -58,10 +65,7 @@ void	one_start_exit_check(char **map);
 */
 void	valid_path_check(char **map);
 
-/* Additional functions */
-
-// TODO: Add flood_fill()
-
+/* Additional Functions */
 /*
 *	Reference: DNE
 *
@@ -75,5 +79,9 @@ void	valid_path_check(char **map);
 *	Return Value: C-standard string with nl, or NULL on invalid fd.
 */
 char	*get_next_line(int fd);
+
+// TODO: Add flood_fill()
+
+char	**get_map(int fd);
 
 #endif

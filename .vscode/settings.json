@@ -82,7 +82,12 @@
     "system_error": "c",
     "unistd.h": "c",
     "helper.h": "c",
-    "parse_helper.h": "c"
+    "parse_helper.h": "c",
+    "game.h": "c",
+    "libft.h": "c",
+    "player.h": "c",
+    "enemy.h": "c",
+    "map.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

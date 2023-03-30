@@ -8,7 +8,7 @@ BUILD	=	./build
 
 DIR		=	./src
 
-SUBDIRS	=	main parse
+SUBDIRS	=	main parse map
 
 DEP		=	$(wildcard $(INCLUDE)/*.h) Makefile
 
@@ -22,7 +22,7 @@ CC 		= 	cc
 
 RM		=	rm -rf
 
-CFLAGS	=	-g -fsanitize=address #-Wall -Wextra -Werror
+CFLAGS	=	-g #-fsanitize=address #-Wall -Wextra -Werror
 
 LFLAGS	=	-L./libft -lft -L./printf -lftprintf
 
@@ -50,6 +50,10 @@ $(BUILD)/%.o:	$(DIR)/main/%.c $(DEP)
 					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(BUILD)/%.o:	$(DIR)/parse/%.c $(DEP)
+					@echo "${YELLOW}Compiling $<.${RESET}"
+					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+
+$(BUILD)/%.o:	$(DIR)/map/%.c $(DEP)
 					@echo "${YELLOW}Compiling $<.${RESET}"
 					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 

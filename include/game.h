@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 14:44:59 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 20:02:16 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef struct s_game
 	void		*window;
 	int			w_height;
 	int			w_width;
+	int			col_count;
+	int			enemy_count;
 	t_map		*map;
 	t_player	*player;
 	t_enemy		*enemy;
