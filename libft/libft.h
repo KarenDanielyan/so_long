@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 22:21:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/21 18:45:33 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:18:04 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 }	t_list;
 
 /* Glibc Functions */
+void	ft_strcpy(char *dest, const char *src);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -61,6 +62,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 char	*ft_itoa(int n);
+char	**ft_strdup_2d(const char **s);
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);

@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid_path_check.c                                 :+:      :+:    :+:   */
+/*   ft_strdup_2d.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 19:53:34 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 22:16:48 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/03/30 22:06:39 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/03/30 22:14:32 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse_helper.h"
-#include <libft.h>
+#include "libft.h"
 
-void	valid_path_check(char **map)
+char	**ft_strdup_2d(const char **s)
 {
+	int		i;
 	char	**dup;
-	dup = ft_strdup_2d(map);
+
+	i = ft_strlen_2d(s);
+	dup = (char **)malloc(i * sizeof(char *));
+	i = 0;
+	while (*(s + i))
+	{
+		*(dup + i) = (char *)malloc((ft_strlen(*(s + i)) + 1) * sizeof(char));
+		ft_strcpy(*(dup + i), *(s + i));
+		i ++;
+	}
+	return (dup);
 }

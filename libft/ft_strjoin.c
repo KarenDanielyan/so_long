@@ -6,13 +6,13 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 21:18:24 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/01/21 16:24:20 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:13:45 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_strcpy(char *dest, const char *src)
+void	ft_strcpy(char *dest, const char *src)
 {
 	int	i;
 

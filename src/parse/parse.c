@@ -6,13 +6,12 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:17:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 20:47:14 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:16:59 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 #include "parse_helper.h"
-
 #include <ft_printf.h>
 
 static	void	free_2d(char **s)
