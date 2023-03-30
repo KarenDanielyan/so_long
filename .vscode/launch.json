@@ -13,7 +13,7 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/so_long",
-      "args": ["/dev/stdin", "bozo", "cat", "/dev/stdout"],
+      "args": ["toto.ber"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [{ "name": "config", "value": "debug" }],

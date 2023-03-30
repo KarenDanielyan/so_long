@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:27:31 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 16:41:57 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 18:25:51 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,21 @@
 #ifndef PARSE_HELPER_H
 # define PARSE_HELPER_H
 
+# include <ft_printf.h>
+# include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <libft.h>
+# include <errno.h>
+
 /*
 *	Description: extension_check() checks whether provided
 *	argument has proper extension or not.
 *	If invalid file is provided, program will terminate it's execution.
+*	It will return fd of inputted file on success.
 */
-void	extension_check(char *file);
+int	extension_check(char *file);
 /*
 *	Description: rectangular_map() will check whether the provided map
 *	rectangular or not.
