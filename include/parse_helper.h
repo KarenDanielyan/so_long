@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helpers.h                                          :+:      :+:    :+:   */
+/*   parse_helper.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 19:00:35 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/29 19:56:50 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/03/30 15:27:31 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/03/30 15:27:49 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HELPERS_H
-# define HELPERS_H
+
+#ifndef PARSE_HELPER_H
+# define PARSE_HELPER_H
 
 /*
 *	Description: extension_check() checks whether provided

@@ -4,5 +4,3 @@ printf/build
 printf/libftprintf.a
 libft/libft.a
 so_long
-parse/build
-parse/libparse.a

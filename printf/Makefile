@@ -27,9 +27,6 @@ AR			=	ar rcs
 $(BUILD)/%.o: $(SRC)/%.c	$(DEP)
 				@$(CC) $(CFLAGS) $(IFLAGS) -c -o $@ $<
 
-$(BUILD)/%.o: $(SRC_B)/%.c	$(DEP)
-				@$(CC) $(CFLAGS) $(IFLAGS) -c -o $@ $<
-
 all:		$(NAME)
 
 $(BUILD):

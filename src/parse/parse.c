@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.h                                            :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 18:59:51 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/29 19:56:44 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/03/29 19:17:55 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/03/30 15:27:20 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_H
-# define PARSE_H
+#include "parse.h"
+#include "parse_helper.h"
+#include <ft_printf.h>
 
-/*
-*	Descirpion: This function parses the provided map
-*	and return it in double char array on success.
-*	Program will terminate otherwise.
-*/
-char	**parse(char *file);
+char	**parse(char *file)
+{
+	char **map;
 
-#endif
+	map = NULL;
+	ft_dprintf(STDOUT_FILENO, "This is parse() function. It does nothing yet.\n");
+	extension_check(file);
+	//TODO: add read_file() function
+	rectangle_check(map);
+	wall_check(map);
+	invalid_char_check(map);
+	one_start_exit_check(map);
+	valid_path_check(map);
+	return (map);
+}

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 14:07:32 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 14:44:59 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include "enemy.h"
 # include "player.h"
 
+# define		TEXTURE_SIZE 64
+
 /*
 *	Description: Our game instance. It contains
 *	everything we need to know to figure out status
@@ -26,6 +28,10 @@
 /* TODO: add more fields that we need. */
 typedef struct s_game
 {
+	void		*mlx;
+	void		*window;
+	int			w_height;
+	int			w_width;
 	t_map		*map;
 	t_player	*player;
 	t_enemy		*enemy;

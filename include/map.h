@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:51:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 14:08:45 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 14:41:15 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_tile
 	int			x;
 	int			y;
 	t_terrain	type;
+	void		*texture;
 }	t_tile;
 
 typedef struct s_map

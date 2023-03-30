@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rectangle_check.c                                  :+:      :+:    :+:   */
+/*   one_start_exit_check.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 19:53:06 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/29 19:57:14 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/03/29 19:50:46 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/03/30 15:27:20 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "helpers.h"
+#include "parse_helper.h"
 
-void	rectangle_check(char **map)
+void	one_start_exit_check(char **map)
 {
 	(void)map;
 }

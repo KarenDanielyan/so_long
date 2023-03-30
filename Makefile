@@ -8,13 +8,13 @@ BUILD	=	./build
 
 DIR		=	./src
 
-FILES	=	main.c
+SUBDIRS	=	main parse
 
 DEP		=	$(wildcard $(INCLUDE)/*.h) Makefile
 
-SRC		=	$(patsubst %.c, $(DIR)/%.c, $(FILES))
+SRC		=	$(foreach dir, $(SUBDIRS), $(wildcard $(DIR)/$(dir)/*.c))
 
-OBJS	=	$(patsubst $(DIR)/%.c, $(BUILD)/%.o, $(SRC))
+OBJS =		$(foreach dir, $(SUBDIRS), $(patsubst $(DIR)/$(dir)/%.c, $(BUILD)/%.o, $(wildcard $(DIR)/$(dir)/*.c)))
 
 # Compilation options
 
@@ -24,9 +24,9 @@ RM		=	rm -rf
 
 CFLAGS	=	-g -fsanitize=address -Wall -Wextra -Werror
 
-LFLAGS	=	-L./libft -lft -L./printf -lftprintf -L./parse -lparse -Wl,-rpath,.
+LFLAGS	=	-L./libft -lft -L./printf -lftprintf
 
-IFLAGS	=	-I./include -I./libft -I./printf/include -I./parse/include
+IFLAGS	=	-I./include -I./libft -I./printf/include
 
 MGOALS	=	$(filter-out bonus, $(MAKECMDGOALS))
 
@@ -38,14 +38,18 @@ GREEN	=	\033[32m
 YELLOW	=	\033[33m
 BLUE	=	\033[34m
 
-
 # Recipies
-all:		libft printf parse $(NAME)
+
+all:		wait_msg libft printf $(NAME)
 
 $(BUILD):
-				@mkdir $(BUILD)
+				@mkdir -p $(BUILD)
 
-$(BUILD)/%.o:	$(DIR)/%.c $(DEP)
+$(BUILD)/%.o:	$(DIR)/main/%.c $(DEP)
+					@echo "${YELLOW}Compiling $<.${RESET}"
+					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+
+$(BUILD)/%.o:	$(DIR)/parse/%.c $(DEP)
 					@echo "${YELLOW}Compiling $<.${RESET}"
 					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
@@ -60,11 +64,8 @@ libft:
 printf:
 				@$(MAKE) $(MGOALS) -C printf
 
-parse:
-				@$(MAKE) $(MGOALS) -C parse
-
 wait_msg:
-				@echo "${BLUE}Please wait for pipex to compile.${RESET}"
+				@echo "${BLUE}Please wait for so_long to compile.${RESET}"
 
 clean:		printf libft
 				@echo "${YELLOW}Cleaning Build...${RESET}"
@@ -79,4 +80,4 @@ fclean:		printf libft
 
 re:			fclean all
 
-.PHONY:		all clean fclean re libft printf parse
+.PHONY:		all clean fclean re libft printf

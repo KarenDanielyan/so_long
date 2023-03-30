@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wall_check.c                                       :+:      :+:    :+:   */
+/*   parse.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 19:54:05 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/29 19:57:20 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/03/29 18:59:51 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/03/30 15:26:29 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "helpers.h"
+#ifndef PARSE_H
+# define PARSE_H
 
-void	wall_check(char **map)
-{
-	(void)map;
-}
+/*
+*	Descirpion: This function parses the provided map
+*	and return it in double char array on success.
+*	Program will terminate otherwise.
+*/
+char	**parse(char *file);
+
+#endif

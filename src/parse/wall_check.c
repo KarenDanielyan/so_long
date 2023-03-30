@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extension_check.c                                  :+:      :+:    :+:   */
+/*   wall_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 19:49:36 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/29 19:57:02 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/03/29 19:54:05 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/03/30 15:27:20 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "helpers.h"
+#include "parse_helper.h"
 
-void	extension_check(char *file)
+void	wall_check(char **map)
 {
-	(void)file;
+	(void)map;
 }
