@@ -79,7 +79,9 @@
     "get_next_line.h": "c",
     "ft_printf.h": "c",
     "map": "c",
-    "system_error": "c"
+    "system_error": "c",
+    "unistd.h": "c",
+    "helper.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

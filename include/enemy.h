@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:51:35 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 14:59:06 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:47:29 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ typedef struct s_enemy
 	void	*textures[TEXTURE_COUNT];
 }	t_enemy;
 
-int	**get_control_zone(t_type type)
-{
-	return (NULL);
-}
+int	**get_control_zone(t_type type);
 
 #endif

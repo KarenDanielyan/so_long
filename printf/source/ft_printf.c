@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:49:40 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/29 14:41:07 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:19:37 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@ static int	check_flag(const char *s, va_list args)
 
 	count = 0;
 	if (*s == 'd' || *s == 'i')
-		count += ft_putnbr_fd(1, va_arg(args, int));
+		count += printf_putnbr_fd(1, va_arg(args, int));
 	else if (*s == 'u')
-		count += ft_putunbr_fd(1, va_arg(args, unsigned int));
+		count += printf_putunbr_fd(1, va_arg(args, unsigned int));
 	else if (*s == 's')
-		count += ft_putstr_fd(1, va_arg(args, char *));
+		count += printf_putstr_fd(1, va_arg(args, char *));
 	else if (*s == 'c')
-		count += ft_putchar_fd(1, va_arg(args, int));
+		count += printf_putchar_fd(1, va_arg(args, int));
 	else if (*s == 'p')
 	{
 		write(STDOUT_FILENO, "0x", 2);
-		count += ft_putptr_fd(1, va_arg(args, uintptr_t), L_HEX) + 2;
+		count += printf_putptr_fd(1, va_arg(args, uintptr_t), L_HEX) + 2;
 	}
 	else if (*s == 'x' || *s == 'X')
-		count += ft_puthex_fd(1, va_arg(args, unsigned int), s);
+		count += printf_puthex_fd(1, va_arg(args, unsigned int), s);
 	else if (*s == '%')
 	{
 		count += 1;
@@ -46,11 +46,11 @@ static char	*on_f(char *s, va_list args, int *count)
 	if (*s == '%')
 	{
 		s++;
-		while (*s && !ft_strchr(FORMAT_FLAGS, *s) && !ft_strchr(ESCAPE_SEQ, *s))
+		while (*s && !printf_strchr(FORMAT_FLAGS, *s) && !printf_strchr(ESCAPE_SEQ, *s))
 			s ++;
-		if (ft_strchr(FORMAT_FLAGS, *s))
+		if (printf_strchr(FORMAT_FLAGS, *s))
 			*count += check_flag(s, args);
-		else if (ft_strchr(ESCAPE_SEQ, *s))
+		else if (printf_strchr(ESCAPE_SEQ, *s))
 		{
 			write(STDOUT_FILENO, s, 1);
 			(*count)++;

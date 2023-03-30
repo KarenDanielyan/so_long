@@ -12,7 +12,7 @@
       "name": "OSX Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/pipex",
+      "program": "${workspaceFolder}/so_long",
       "args": ["/dev/stdin", "bozo", "cat", "/dev/stdout"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 14:24:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/29 14:41:23 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:16:07 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@
 # define L_HEX			"0123456789abcdef"
 
 /* Helper Functions */
-char	*ft_itoa_base(long n, const char *base);
-char	*ft_strchr(const char *str, int c);
+char	*printf_itoa_base(long n, const char *base);
+char	*printf_strchr(const char *str, int c);
 
-int		ft_putchar_fd(int fd, char c);
-int		ft_putunbr_fd(int fd, unsigned int nbr);
-int		ft_putnbr_fd(int fd, int nbr);
-int		ft_putptr_fd(int fd, uintptr_t ptr, char *base);
-int		ft_putstr_fd(int fd, char *str);
-int		ft_puthex_fd(int fd, unsigned int nbr, const char *f_str);
+int		printf_putchar_fd(int fd, char c);
+int		printf_putunbr_fd(int fd, unsigned int nbr);
+int		printf_putnbr_fd(int fd, int nbr);
+int		printf_putptr_fd(int fd, uintptr_t ptr, char *base);
+int		printf_putstr_fd(int fd, char *str);
+int		printf_puthex_fd(int fd, unsigned int nbr, const char *f_str);
 
-size_t	ft_strlen(const char *str);
+size_t	printf_strlen(const char *str);
 
 #endif

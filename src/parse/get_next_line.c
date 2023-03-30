@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
+#include "parse_helper.h"
 
 static void	free_feed(char *line_feed[OPEN_MAX])
 {

@@ -6,13 +6,13 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:09:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/29 14:32:24 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:18:43 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "helper.h"
 
-int	ft_putstr_fd(int fd, char *str)
+int	printf_putstr_fd(int fd, char *str)
 {
 	int	count;
 

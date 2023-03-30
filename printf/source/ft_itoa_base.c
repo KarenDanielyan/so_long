@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 22:22:37 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/29 14:28:56 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:19:57 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static long	count_digits(unsigned long digits, const char *base)
 	unsigned long	base_len;
 
 	i = 1;
-	base_len = (long )(ft_strlen(base) - 1);
+	base_len = (long )(printf_strlen(base) - 1);
 	while (digits > base_len)
 	{
 		i ++;
@@ -41,7 +41,7 @@ static void	ft_strrev(char *a)
 	char	temp;
 
 	l = a;
-	r = a + ft_strlen(a) - 1;
+	r = a + printf_strlen(a) - 1;
 	while (l < r)
 	{
 		temp = *l;
@@ -59,7 +59,7 @@ static char	*fill_out(unsigned long digits, long size,
 	char	*i;
 	long	base_len;
 
-	base_len = ft_strlen(base);
+	base_len = printf_strlen(base);
 	a = malloc ((size + 1) * sizeof(char));
 	if (a == NULL)
 		return (NULL);
@@ -80,7 +80,7 @@ static char	*fill_out(unsigned long digits, long size,
 	return (a);
 }
 
-char	*ft_itoa_base(long n, const char *base)
+char	*printf_itoa_base(long n, const char *base)
 {
 	long			size;
 	long			sign;
