@@ -22,7 +22,7 @@ CC 		= 	cc
 
 RM		=	rm -rf
 
-CFLAGS	=	-g #-fsanitize=address #-Wall -Wextra -Werror
+CFLAGS	=	-g -fsanitize=address #-Wall -Wextra -Werror
 
 LFLAGS	=	-L./libft -lft -L./printf -lftprintf
 

@@ -6,13 +6,13 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 22:06:39 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 22:14:32 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 00:58:21 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strdup_2d(const char **s)
+char	**ft_strdup_2d(char const **s)
 {
 	int		i;
 	char	**dup;

@@ -6,15 +6,87 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:53:34 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 22:16:48 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 01:32:07 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse_helper.h"
 #include <libft.h>
 
+struct s_loc
+{
+	int	x;
+	int	y;
+};
+
+
+static void	flood(char **map, int sr, int sc, char *color, char new_color)
+{
+	if (sr < 0 || sc < 0 || sr >= ft_strlen_2d((const char **)map) || sc >= ft_strlen(*map) ||
+		ft_strchr(color, map[sr][sc]) == NULL)
+		return ;
+	map[sr][sc] = new_color;
+	flood(map, sr + 1, sc, color, new_color);
+	flood(map, sr - 1, sc, color, new_color);
+	flood(map, sr, sc + 1, color, new_color);
+	flood(map, sr, sc - 1, color, new_color);
+}
+
+static void	flood_fill(char **map, int sr, int sc, char new_color)
+{
+	flood(map, sr, sc, "0PCE", new_color);
+}
+
+struct s_loc	get_flood_start(char **map)
+{
+	struct s_loc	loc;
+	int				i;
+	int				j;
+
+	i = 0;
+	while (*(map + i))
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] == 'P')
+			{
+				loc.x = j;
+				loc.y = i;
+				return (loc);
+			}
+			j ++;
+		}
+		i ++;
+	}
+	loc.x = -1;
+	loc.y = -1;
+	return (loc);
+}
 void	valid_path_check(char **map)
 {
-	char	**dup;
-	dup = ft_strdup_2d(map);
+	struct s_loc	start;
+	char			**dup;
+	int				j;
+	int				i;
+
+	dup = ft_strdup_2d((const char **)map);
+	start = get_flood_start(map);
+	flood_fill(dup, start.y, start.x, 'f');
+	i = 0;
+	while (*(dup + i))
+	{
+		j = 0;
+		while (dup[i][j])
+		{
+			if (dup[i][j] == 'C' || dup[i][j] == 'E' ||
+				dup[i][j] == 'P')
+			{
+				ft_printf("Error\nNo valid path in the map.\n");
+				exit(EXIT_FAILURE);
+			}
+			j ++;
+		}
+		i ++;
+	}
 }
