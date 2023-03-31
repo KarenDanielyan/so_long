@@ -6,20 +6,35 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:50:46 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 21:57:27 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:34:49 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse_helper.h"
+
+static void	check_count(int s_c, int e_c, int c_c)
+{
+	if (e_c != 1 || s_c != 1 || c_c == 0)
+	{
+		ft_printf("Error\n");
+		if (e_c != 1 || s_c != 1)
+			ft_printf("Invalid number of start/exit points.\n");
+		if (c_c == 0)
+			ft_printf("No collectibles on the map.\n");
+		exit(EXIT_FAILURE);
+	}
+}
 
 void	one_start_exit_check(char **map)
 {
 	char	*s;
 	int		s_c;
 	int		e_c;
+	int		c_c;
 
 	s_c = 0;
 	e_c = 0;
+	c_c = 0;
 	while (*map)
 	{
 		s = *map;
@@ -29,13 +44,11 @@ void	one_start_exit_check(char **map)
 				e_c ++;
 			if (*s == 'P')
 				s_c ++;
+			if (*s == 'C')
+				c_c ++;
 			s ++;
 		}
 		map ++;
 	}
-	if (e_c != 1 || s_c != 1)
-	{
-		ft_printf("Error\nInvalid number of start/exit points.\n");
-		exit(EXIT_FAILURE);
-	}
+	check_count(s_c, e_c, c_c);
 }

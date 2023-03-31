@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:53:34 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 17:50:16 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 19:17:43 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,7 @@ void	valid_path_check(char **map)
 		j = 0;
 		while (dup[i][j])
 		{
-			if (dup[i][j] == 'C' || dup[i][j] == 'E' ||
-				dup[i][j] == 'P')
+			if (dup[i][j] == 'C' || dup[i][j] == 'E')
 			{
 				ft_printf("Error\nNo valid path in the map.\n");
 				exit(EXIT_FAILURE);
