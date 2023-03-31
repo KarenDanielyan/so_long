@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 19:08:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 17:10:51 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:44:50 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@ static void	check_on_nl(char *line)
 	if (ft_strcmp(line, "\n") == 0)
 	{
 		ft_printf("Error\nMap contains an empty line.\n");
+		exit(EXIT_FAILURE);
+	}
+}
+
+static void	check_on_empty(char *feed)
+{
+	if (!feed)
+	{
+		ft_printf("Error\nEmpty File.\n");
 		exit(EXIT_FAILURE);
 	}
 }
@@ -44,11 +53,7 @@ static char	*read_file(int fd)
 		}
 		free(line);
 	}
-	if (!feed)
-	{
-		ft_printf("Error\nEmpty File.\n");
-		exit(EXIT_FAILURE);
-	}
+	check_on_empty(feed);
 	return (feed);
 }
 

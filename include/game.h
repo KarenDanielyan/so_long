@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 20:02:16 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:56:21 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "enemy.h"
 # include "player.h"
 
-# define		TEXTURE_SIZE 64
+# define TEXTURE_SIZE 64
 
 /*
 *	Description: Our game instance. It contains

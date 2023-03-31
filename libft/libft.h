@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 22:21:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 01:39:39 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:39:10 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int		ft_strlen_2d(char const **s);
 long	ft_atol(const char *s);
 
 /* Additional Functions */
+void	free_2d(char **s);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);

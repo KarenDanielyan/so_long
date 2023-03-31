@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:51:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 19:23:08 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:58:05 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ typedef struct s_map
 	t_tile	**tiles;
 }	t_map;
 
-
 /* Functions */
-
 
 #endif

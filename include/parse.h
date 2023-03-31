@@ -6,14 +6,14 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:59:51 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 19:23:43 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:56:31 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSE_H
 # define PARSE_H
 
-#include "game.h"
+# include "game.h"
 
 /*
 *	Descirpion: This function parses the provided map

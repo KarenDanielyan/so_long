@@ -6,14 +6,14 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:54:05 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 21:37:59 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:45:52 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse_helper.h"
 #include "game.h"
 
-static void	err_msg()
+static void	err_msg(void)
 {
 	ft_printf("Error\nMap is not surrounded by walls\n");
 	exit(EXIT_FAILURE);

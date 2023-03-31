@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 22:06:39 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 00:58:21 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:53:27 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**ft_strdup_2d(char const **s)
 	char	**dup;
 
 	i = ft_strlen_2d(s);
-	dup = (char **)malloc(i * sizeof(char *));
+	dup = (char **)malloc((i + 1) * sizeof(char *));
 	i = 0;
 	while (*(s + i))
 	{
@@ -26,5 +26,6 @@ char	**ft_strdup_2d(char const **s)
 		ft_strcpy(*(dup + i), *(s + i));
 		i ++;
 	}
+	*(dup + i) = NULL;
 	return (dup);
 }

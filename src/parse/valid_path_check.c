@@ -6,12 +6,14 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:53:34 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 01:32:07 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:50:16 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse_helper.h"
 #include <libft.h>
+
+#define COLOR "0PCE"
 
 struct s_loc
 {
@@ -19,22 +21,21 @@ struct s_loc
 	int	y;
 };
 
-
-static void	flood(char **map, int sr, int sc, char *color, char new_color)
+static void	flood(char **map, int sr, int sc, char new_color)
 {
-	if (sr < 0 || sc < 0 || sr >= ft_strlen_2d((const char **)map) || sc >= ft_strlen(*map) ||
-		ft_strchr(color, map[sr][sc]) == NULL)
+	if (sr < 0 || sc < 0 || sr >= ft_strlen_2d((const char **)map)
+		|| sc >= ft_strlen(*map) || ft_strchr(COLOR, map[sr][sc]) == NULL)
 		return ;
 	map[sr][sc] = new_color;
-	flood(map, sr + 1, sc, color, new_color);
-	flood(map, sr - 1, sc, color, new_color);
-	flood(map, sr, sc + 1, color, new_color);
-	flood(map, sr, sc - 1, color, new_color);
+	flood(map, sr + 1, sc, new_color);
+	flood(map, sr - 1, sc, new_color);
+	flood(map, sr, sc + 1, new_color);
+	flood(map, sr, sc - 1, new_color);
 }
 
 static void	flood_fill(char **map, int sr, int sc, char new_color)
 {
-	flood(map, sr, sc, "0PCE", new_color);
+	flood(map, sr, sc, new_color);
 }
 
 struct s_loc	get_flood_start(char **map)
@@ -63,6 +64,7 @@ struct s_loc	get_flood_start(char **map)
 	loc.y = -1;
 	return (loc);
 }
+
 void	valid_path_check(char **map)
 {
 	struct s_loc	start;
@@ -89,4 +91,5 @@ void	valid_path_check(char **map)
 		}
 		i ++;
 	}
+	free_2d(dup);
 }

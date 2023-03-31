@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:41:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 20:27:44 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:55:51 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <parse.h>
 #include <string.h>
 #include <errno.h>
-
 
 int	main(int ac, char **av)
 {
@@ -26,6 +25,5 @@ int	main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 	game = parse(av[1]);
-	// TODO: Put your game logic here;
 	return (0);
 }

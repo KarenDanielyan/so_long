@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 14:21:30 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 17:20:48 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:54:20 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ static char	*on_f(int fd, char *s, va_list args, int *count)
 	if (*s == '%')
 	{
 		s++;
-		while (*s && !printf_strchr(FORMAT_FLAGS, *s) && !printf_strchr(ESCAPE_SEQ, *s))
+		while (*s && !printf_strchr(FORMAT_FLAGS, *s)
+			&& !printf_strchr(ESCAPE_SEQ, *s))
 			s ++;
 		if (printf_strchr(FORMAT_FLAGS, *s))
 			*count += check_flag(fd, s, args);

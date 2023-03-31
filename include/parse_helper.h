@@ -6,10 +6,9 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:27:31 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 19:24:04 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:57:42 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef PARSE_HELPER_H
 # define PARSE_HELPER_H
@@ -19,7 +18,6 @@
 # include <fcntl.h>
 # include <libft.h>
 # include <errno.h>
-
 
 # ifndef BONUS
 
@@ -35,7 +33,7 @@
 *	If invalid file is provided, program will terminate it's execution.
 *	It will return fd of inputted file on success.
 */
-int	extension_check(char *file);
+int		extension_check(char *file);
 /*
 *	Description: rectangular_map() will check whether the provided map
 *	rectangular or not.
@@ -59,8 +57,8 @@ void	invalid_char_check(char **map);
 */
 void	one_start_exit_check(char **map);
 /*
-*	Decription: valid_path_check() will try to find a valid path from starting position
-*	towards collectibles and exit.
+*	Decription: valid_path_check() will try to find 
+*	a valid path from starting position towards collectibles and exit.
 *	Program will terminate it's execution if no valid path was found.
 */
 void	valid_path_check(char **map);
