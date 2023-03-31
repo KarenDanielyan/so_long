@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 19:08:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 19:58:53 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:10:51 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ char	**get_map(int fd)
 		ft_printf("Error\nInsufficient Memory.\n");
 		exit(EXIT_FAILURE);
 	}
+	free(feed);
 	return (split);
 }
