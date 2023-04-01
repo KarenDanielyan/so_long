@@ -1,34 +1,42 @@
 # Program and it's dependencies
 
-NAME	=	so_long
+PLATFORM	=	$(shell uname -s)
 
-INCLUDE	=	./include
+NAME		=	so_long
 
-BUILD	=	./build
+INCLUDE		=	./include
 
-DIR		=	./src
+BUILD		=	./build
 
-SUBDIRS	=	main parse map
+DIR			=	./src
 
-DEP		=	$(wildcard $(INCLUDE)/*.h) Makefile
+SUBDIRS		=	main parse map
 
-SRC		=	$(foreach dir, $(SUBDIRS), $(wildcard $(DIR)/$(dir)/*.c))
+DEP			=	$(wildcard $(INCLUDE)/*.h) Makefile
 
-OBJS =		$(foreach dir, $(SUBDIRS), $(patsubst $(DIR)/$(dir)/%.c, $(BUILD)/%.o, $(wildcard $(DIR)/$(dir)/*.c)))
+SRC			=	$(foreach dir, $(SUBDIRS), $(wildcard $(DIR)/$(dir)/*.c))
+
+OBJS		=	$(foreach dir, $(SUBDIRS), $(patsubst $(DIR)/$(dir)/%.c, $(BUILD)/%.o, $(wildcard $(DIR)/$(dir)/*.c)))
 
 # Compilation options
 
-CC 		= 	cc
+CC			=	cc
 
-RM		=	rm -rf
+RM			=	rm -rf
 
-CFLAGS	=	-g -fsanitize=address #-Wall -Wextra -Werror
+CFLAGS		=	-g -fsanitize=address #-Wall -Wextra -Werror
 
-LFLAGS	=	-L./libft -lft -L./printf -lftprintf
+ifeq ($(PLATFORM),Linux)
+	LFLAGS	=	-L./libft -lft -L./printf -lftprintf -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
+	IFLAGS	=	-I/usr/include -Imlx_linux -I./include -I./libft -I./printf/include
+endif
+ifeq ($(PLATFORM),Darwin)
+	LFLAGS	=	-L./libft -lft -L./printf -lftprintf
+	IFLAGS	=	-I./include -I./libft -I./printf/include
+endif
 
-IFLAGS	=	-I./include -I./libft -I./printf/include
 
-MGOALS	=	$(filter-out bonus, $(MAKECMDGOALS))
+MGOALS		=	$(filter-out bonus, $(MAKECMDGOALS))
 
 # Colors
 
@@ -40,7 +48,7 @@ BLUE	=	\033[34m
 
 # Recipies
 
-all:		wait_msg libft printf $(NAME)
+all:		wait_msg mlx libft printf $(NAME)
 
 $(BUILD):
 				@mkdir -p $(BUILD)
@@ -68,10 +76,13 @@ libft:
 printf:
 				@$(MAKE) $(MGOALS) -C printf
 
+mlx:
+				@$(MAKE) $(MGOALS) -C mlx_linux
+
 wait_msg:
 				@echo "${BLUE}Please wait for so_long to compile.${RESET}"
 
-clean:		printf libft
+clean:		mlx printf libft
 				@echo "${YELLOW}Cleaning Build...${RESET}"
 				@$(RM) $(BUILD)
 				@echo "${GREEN}Done.${RESET}"
