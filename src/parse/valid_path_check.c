@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:53:34 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 19:17:43 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/01 23:19:03 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ struct s_loc
 
 static void	flood(char **map, int sr, int sc, char new_color)
 {
-	if (sr < 0 || sc < 0 || sr >= ft_strlen_2d((const char **)map)
-		|| sc >= ft_strlen(*map) || ft_strchr(COLOR, map[sr][sc]) == NULL)
+	if (sr < 0 || sc < 0 || sr >= (int)ft_strlen_2d((const char **)map)
+		|| sc >= (int)ft_strlen(*map) || ft_strchr(COLOR, map[sr][sc]) == NULL)
 		return ;
 	map[sr][sc] = new_color;
 	flood(map, sr + 1, sc, new_color);

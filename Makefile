@@ -24,7 +24,7 @@ CC			=	cc
 
 RM			=	rm -rf
 
-CFLAGS		=	-g -fsanitize=address #-Wall -Wextra -Werror
+CFLAGS		=	-g -fsanitize=address -Wall -Wextra -Werror
 
 ifeq ($(PLATFORM),Linux)
 	INVOKE	=	wait_msg mlx libft printf $(NAME)

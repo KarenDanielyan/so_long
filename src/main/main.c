@@ -50,5 +50,5 @@ int	main(int ac, char **av)
 	}
 	game = parse(av[1]);
 	init_window(&game);
-	return (0);
+	exit(EXIT_SUCCESS);
 }
