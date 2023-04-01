@@ -10,7 +10,7 @@ BUILD		=	./build
 
 DIR			=	./src
 
-SUBDIRS		=	main parse map
+SUBDIRS		=	main parse map game
 
 DEP			=	$(wildcard $(INCLUDE)/*.h) Makefile
 
@@ -63,6 +63,10 @@ $(BUILD)/%.o:	$(DIR)/parse/%.c $(DEP)
 					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(BUILD)/%.o:	$(DIR)/map/%.c $(DEP)
+					@echo "${YELLOW}Compiling $<.${RESET}"
+					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+
+$(BUILD)/%.o:	$(DIR)/game/%.c $(DEP)
 					@echo "${YELLOW}Compiling $<.${RESET}"
 					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 

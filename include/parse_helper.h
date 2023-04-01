@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:27:31 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 17:57:42 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/01 16:02:07 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,6 @@
 # include <libft.h>
 # include <errno.h>
 
-# ifndef BONUS
-
-#  define MAPSYMS "01CEP"
-# else
-
-#  define MAPSYMS "01CEP"
-# endif
 
 /*
 *	Description: extension_check() checks whether provided

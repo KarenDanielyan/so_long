@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:41:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 18:48:33 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:48:33by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int	main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 	game = parse(av[1]);
+	mlx_loop(game.mlx);
 	return (0);
 }

@@ -6,19 +6,28 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 14:00:33 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/01 16:15:50 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GAME_H
 # define GAME_H
 
+# include <mlx.h>
 # include "map.h"
 # include "enemy.h"
 # include "player.h"
 
 # define TEXTURE_SIZE 64
 # define GAME_TITLE "Realmbreak: The Lost Labyrinth"
+
+# ifndef BONUS
+
+#  define MAPSYMS "01CEP"
+# else
+
+#  define MAPSYMS "01^~CEP"
+# endif
 
 /*
 *	Description: Our game instance. It contains
@@ -39,6 +48,10 @@ typedef struct s_game
 	t_enemy		*enemy;
 }	t_game;
 
-void	game_init(t_game *game);
+/*
+*	Description: Our "constructor" for game structure.
+*	It is setting up our game state.
+*/
+void	new_game(t_game *game, char **map);
 
 #endif

@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   terrain.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 19:17:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 15:17:39 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/04/01 16:00:25 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/04/01 16:11:37 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
-#include "parse_helper.h"
+#include "map_helper.h"
 #include "game.h"
-#include <ft_printf.h>
 
-t_game	parse(char *file)
+t_terrain	get_terrain(char symb)
 {
-	int		fd;
-	char	**map;
-	t_game	game;
-
-	fd = extension_check(file);
-	map = get_map(fd);
-	rectangle_check(map);
-	wall_check(map);
-	invalid_char_check(map);
-	one_start_exit_check(map);
-	valid_path_check(map);
-	new_game(&game, map);
-	free_2d(map);
-	return (game);
+	if (symb == MAPSYMS[0] || symb == MAPSYMS[2]
+		|| symb == MAPSYMS[3] || symb == MAPSYMS[4])
+		return (PLAINS);
+	if (symb == MAPSYMS[1])
+		return (WALL);
+	return (NAT);
 }
