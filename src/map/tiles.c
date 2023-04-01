@@ -6,10 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:50:33 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 16:13:46 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/01 19:46:07 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <mlx.h>
 #include <libft.h>
 #include <stdio.h>
 #include "map_helper.h"
@@ -36,7 +37,6 @@ void	read_tiles(t_tile **tiles, char **map, int w, int h)
 		{
 			tiles[i][j].symb = map[i][j];
 			tiles[i][j].type = get_terrain(map[i][j]);
-			//TODO: Texture adding function.
 			j ++;
 		}
 		i ++;

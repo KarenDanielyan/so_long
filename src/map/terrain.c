@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 16:00:25 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 16:11:37 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/01 20:13:00 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ t_terrain	get_terrain(char symb)
 		|| symb == MAPSYMS[3] || symb == MAPSYMS[4])
 		return (PLAINS);
 	if (symb == MAPSYMS[1])
-		return (WALL);
-	return (NAT);
+		return (WALLS);
+	return (0);
 }

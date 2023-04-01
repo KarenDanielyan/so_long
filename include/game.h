@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 16:15:50 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/01 21:40:47 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 # include "enemy.h"
 # include "player.h"
 
-# define TEXTURE_SIZE 64
+# define TEXTURE_SIZE 48
 # define GAME_TITLE "Realmbreak: The Lost Labyrinth"
+# define PLAINS_TEXTURE "./assets/textures/Terrain/Grass.xpm"
+# define WALLS_TEXTURE "./assets/textures/Terrain/Walls.xpm"
 
 # ifndef BONUS
 
@@ -53,5 +55,8 @@ typedef struct s_game
 *	It is setting up our game state.
 */
 void	new_game(t_game *game, char **map);
+
+/* Additional Functions */
+void	set_tile_textures(void *mlx, t_map *map);
 
 #endif

@@ -11,9 +11,30 @@
 /* ************************************************************************** */
 
 #include <ft_printf.h>
-#include <parse.h>
 #include <string.h>
 #include <errno.h>
+#include "game.h"
+#include "parse.h"
+
+void	init_window(t_game *game)
+{
+	int	i;
+	int	j;
+	t_tile	**tiles;
+
+	i = 0;
+	tiles = game->map->tiles;
+	while (i < game->map->height)
+	{
+		j = 0;
+		while (j < game->map->width)
+		{
+			mlx_put_image_to_window(game->mlx, game->window, tiles[i][j].texture, j * TEXTURE_SIZE, i * TEXTURE_SIZE);
+			j ++;
+		}
+		i ++;
+	}
+}
 
 int	main(int ac, char **av)
 {
@@ -28,6 +49,6 @@ int	main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 	game = parse(av[1]);
-	mlx_loop(game.mlx);
+	init_window(&game);
 	return (0);
 }

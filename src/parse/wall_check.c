@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:54:05 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 17:45:52 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/01 20:12:44 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	wall_check(char **map)
 	last_r = ft_strlen_2d((const char **)map);
 	while (i < last_c)
 	{
-		if (map[0][i] != WALL || map[last_r - 1][i] != WALL)
+		if (map[0][i] != WALLS || map[last_r - 1][i] != WALLS)
 			err_msg();
 		i ++;
 	}
 	i = 0;
 	while (i < last_r)
 	{
-		if (map[i][0] != WALL || map[i][last_c - 1] != WALL)
+		if (map[i][0] != WALLS || map[i][last_c - 1] != WALLS)
 			err_msg();
 		i ++;
 	}

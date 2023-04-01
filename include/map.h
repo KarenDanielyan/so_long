@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:51:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 16:29:33 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/01 21:19:49 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@
 enum	e_terrain
 {
 	PLAINS	= '0',
-	WALL	= '1',
+	WALLS	= '1',
 	HILLS	= '^',
 	MARSHES	= '~',
-	NAT		= 0
+	T_COUNT		= 4
 };
 # else
 
 enum	e_terrain
 {
 	PLAINS	= '0',
-	WALL	= '1',
-	NAT		= 0
+	WALLS	= '1',
+	T_COUNT		= 2
 };
 # endif
 
@@ -38,6 +38,8 @@ typedef enum e_terrain	t_terrain;
 typedef struct s_tile
 {
 	char		symb;
+	int			x;
+	int			y;
 	t_terrain	type;
 	void		*texture;
 }	t_tile;
