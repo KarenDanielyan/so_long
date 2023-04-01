@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 21:40:47 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/02 01:19:33 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@
 # include <mlx.h>
 # include "map.h"
 # include "enemy.h"
+# include "assets.h"
 # include "player.h"
 
-# define TEXTURE_SIZE 48
 # define GAME_TITLE "Realmbreak: The Lost Labyrinth"
-# define PLAINS_TEXTURE "./assets/textures/Terrain/Grass.xpm"
-# define WALLS_TEXTURE "./assets/textures/Terrain/Walls.xpm"
 
 # ifndef BONUS
 
@@ -36,18 +34,22 @@
 *	everything we need to know to figure out status
 *	of our game. There is only one game instance in our
 *	architecture.
+*
+*	c_count -> collectibles count,
+*	e_count -> enemies count.
 */
 typedef struct s_game
 {
+	int			w_width;
+	int			w_height;
+	int			c_count;
+	int			e_count;
 	void		*mlx;
 	void		*window;
-	int			w_height;
-	int			w_width;
-	int			col_count;
-	int			enemy_count;
-	t_map		*map;
 	t_player	*player;
 	t_enemy		*enemy;
+	t_assets	*assets;
+	t_map		*map;
 }	t_game;
 
 /*
@@ -55,6 +57,7 @@ typedef struct s_game
 *	It is setting up our game state.
 */
 void	new_game(t_game *game, char **map);
+void	delete_game(t_game *game);
 
 /* Additional Functions */
 void	set_tile_textures(void *mlx, t_map *map);

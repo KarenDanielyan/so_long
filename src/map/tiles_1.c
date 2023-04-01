@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 19:46:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 20:17:49 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/02 00:45:29 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,5 @@ void	set_tile_textures(void *mlx, t_map *map)
 		}
 		i ++;
 	}
+	free(textures);
 }

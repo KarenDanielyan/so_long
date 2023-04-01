@@ -50,5 +50,6 @@ int	main(int ac, char **av)
 	}
 	game = parse(av[1]);
 	init_window(&game);
+	mlx_loop(game.mlx);
 	exit(EXIT_SUCCESS);
 }
