@@ -27,12 +27,14 @@ RM			=	rm -rf
 CFLAGS		=	-g -fsanitize=address #-Wall -Wextra -Werror
 
 ifeq ($(PLATFORM),Linux)
+	INVOKE	=	wait_msg mlx libft printf $(NAME)
 	LFLAGS	=	-L./libft -lft -L./printf -lftprintf -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
 	IFLAGS	=	-I/usr/include -Imlx_linux -I./include -I./libft -I./printf/include
 endif
 ifeq ($(PLATFORM),Darwin)
-	LFLAGS	=	-L./libft -lft -L./printf -lftprintf
-	IFLAGS	=	-I./include -I./libft -I./printf/include
+	INVOKE	=	wait_msg libft printf $(NAME)
+	LFLAGS	=	-L./libft -lft -L./printf -lftprintf -lmlx -framework OpenGL -framework AppKit
+	IFLAGS	=	-I./include -I./libft -I./printf/include -I/usr/local/include
 endif
 
 
@@ -47,8 +49,7 @@ YELLOW	=	\033[33m
 BLUE	=	\033[34m
 
 # Recipies
-
-all:		wait_msg mlx libft printf $(NAME)
+all:		$(INVOKE)
 
 $(BUILD):
 				@mkdir -p $(BUILD)

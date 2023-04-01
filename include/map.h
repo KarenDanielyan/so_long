@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:51:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 17:58:05 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/01 14:10:18 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ typedef enum e_terrain	t_terrain;
 
 typedef struct s_tile
 {
-	int			x;
-	int			y;
 	char		symb;
 	t_terrain	type;
 	void		*texture;
