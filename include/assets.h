@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/02 17:25:24 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/02 20:58:08 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define TP_GROUND_3 "./assets/textures/ground/ground_3.xpm"
 
 # define T_WALL_COUNT 1
-# define TP_WALL "./assets/textures/Walls.xpm"
+# define TP_WALL "./assets/textures/Wall_3-2.xpm"
 
 /* TODO: Define them when doing character animations.
 # define CHAR_IDLE_COUNT 5

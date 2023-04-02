@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:58:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/02 17:53:39 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/02 20:38:59 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ static void	set_assets(void *mlx, void **textures, char **paths)
 	while (*(paths + i) && *(textures + i))
 	{
 		*(textures + i) = mlx_xpm_file_to_image(mlx, *(paths + i), &w, &h);
+		if (*(textures + i) == NULL)
+		{
+			ft_printf("Error\nInvalid Path for Assets are specified.\n");
+			exit(EXIT_FAILURE);
+		}
 		check_size(w, h);
 		i ++;
 	}
