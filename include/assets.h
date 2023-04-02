@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/02 20:58:08 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 01:56:34 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,43 +23,69 @@
 # define T_WALL_COUNT 1
 # define TP_WALL "./assets/textures/Wall_3-2.xpm"
 
-/* TODO: Define them when doing character animations.
-# define CHAR_IDLE_COUNT 5
-# define TP_CHAR_IDLE_1
-# define TP_CHAR_IDLE_2
-# define TP_CHAR_IDLE_3
-# define TP_CHAR_IDLE_4
-# define TP_CHAR_IDLE_5
-*/
+# define CHAR_IDLE_COUNT 6
+# define TP_CHAR_IDLE_1 "./assets/textures/character/MC_Idle_1.xpm"
+# define TP_CHAR_IDLE_2 "./assets/textures/character/MC_Idle_2.xpm"
+# define TP_CHAR_IDLE_3 "./assets/textures/character/MC_Idle_3.xpm"
+# define TP_CHAR_IDLE_4 "./assets/textures/character/MC_Idle_4.xpm"
+# define TP_CHAR_IDLE_5 "./assets/textures/character/MC_Idle_5.xpm"
+# define TP_CHAR_IDLE_6 "./assets/textures/character/MC_Idle_6.xpm"
 
-typedef struct s_assets
-{
-	void	**ground;
-	void	*wall;
-	/* TODO: Add appropriate pointers to player and enemy characters;
-		void	*player;
-		void	*enemy;
-	*/
-}	t_assets;
+# define CHAR_MVUP_COUNT 3
+# define TP_CHAR_MVUP_1 "./assets/textures/character/MC_Run_Up_1.xpm"
+# define TP_CHAR_MVUP_2 "./assets/textures/character/MC_Run_Up_2.xpm"
+# define TP_CHAR_MVUP_3 "./assets/textures/character/MC_Run_Up_3.xpm"
 
-/*
-typedef struct s_player_a
+# define CHAR_MVD_COUNT 3
+# define TP_CHAR_MVD_1 "./assets/textures/character/MC_Run_Down_1.xpm"
+# define TP_CHAR_MVD_2 "./assets/textures/character/MC_Run_Down_2.xpm"
+# define TP_CHAR_MVD_3 "./assets/textures/character/MC_Run_Down_3.xpm"
+
+# define CHAR_MVL_COUNT 3
+# define TP_CHAR_MVL_1 "./assets/textures/character/MC_Run_Left_1.xpm"
+# define TP_CHAR_MVL_2 "./assets/textures/character/MC_Run_Left_2.xpm"
+# define TP_CHAR_MVL_3 "./assets/textures/character/MC_Run_Left_3.xpm"
+
+# define CHAR_MVR_COUNT 3
+# define TP_CHAR_MVR_1 "./assets/textures/character/MC_Run_Right_1.xpm"
+# define TP_CHAR_MVR_2 "./assets/textures/character/MC_Run_Right_2.xpm"
+# define TP_CHAR_MVR_3 "./assets/textures/character/MC_Run_Right_3.xpm"
+
+# define CHAR_ATKL_COUNT 1
+# define CHAR_ATKR_COUNT 1
+# define CHAR_ATKU_COUNT 1
+# define CHAR_ATKD_COUNT 1
+
+typedef struct	s_player_a
 {
 	void	**idle;
-	void	**mov_left;
-	void	**mov_right;
-	void	**mov_up;
-	void	**mov_down;
-	void	**attack;
+	void	**mv_left;
+	void	**mv_right;
+	void	**mv_up;
+	void	**mv_down;
+	void	**atk_down;
+	void	**atk_up;
+	void	**atk_right;
+	void	**atk_left;
+	void	**die;
 }	t_player_a;
 
 typedef struct s_enemy_a
 {
 	void	**idle;
-	void	**mov_left;
-	void	**mov_right;
+	void	**mv;
+	void	**defend;
+	void	**die;
 }	t_enemy_a;
-*/
+
+
+typedef struct s_assets
+{
+	void		**ground;
+	void		*wall;
+	t_enemy_a	*enemy;
+	t_player_a	*mc;
+}	t_assets;
 
 void	new_assets(void *mlx, t_assets **this);
 void	delete_assets(void *mlx, t_assets *this);
