@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/02 01:19:33 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:25:14 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,13 @@ typedef struct s_game
 *	It is setting up our game state.
 */
 void	new_game(t_game *game, char **map);
+/*
+*	Description: Our "destructor".
+*/
 void	delete_game(t_game *game);
 
-/* Additional Functions */
-void	set_tile_textures(void *mlx, t_map *map);
+/* Random Generators */
+double	rand_normal(double mean, double stddev, int use_last, int seed);
+int		read_rand(int min, int max);
 
 #endif

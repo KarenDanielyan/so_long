@@ -6,12 +6,14 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:51:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 21:19:49 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:32:30 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_H
 # define MAP_H
+
+# include "assets.h"
 
 # ifdef BONUS
 
@@ -52,5 +54,8 @@ typedef struct s_map
 }	t_map;
 
 void	new_map(t_map **map, char **mp);
+void	delete_map(t_map *map);
+
+void	set_tile_textures(t_assets *assets, t_map *map);
 
 #endif
