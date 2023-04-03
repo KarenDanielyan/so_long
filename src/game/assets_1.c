@@ -6,19 +6,17 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:49:41 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 15:18:52 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 21:12:25 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "assets_helper.h"
 
-
-
 char **get_ground_paths(void)
 {
 	char	**g_paths;
 
-	g_paths = (char **)malloc((T_GROUND_COUNT + 1) * sizeof(char *));
+	g_paths = (char **)malloc((T_GRND_COUNT + 1) * sizeof(char *));
 	g_paths[0] = TP_GROUND_1;
 	g_paths[1] = TP_GROUND_2;
 	g_paths[2] = TP_GROUND_3;
@@ -49,4 +47,13 @@ char	**get_col_paths(void)
 	return (c_paths);
 }
 
-/* TODO: Add get_char_paths(), get_enemy_paths() */
+char	**get_exit_paths(void)
+{
+	char	**e_paths;
+
+	e_paths = (char **)malloc((T_EXIT_COUNT + 1) * sizeof(char *));
+	e_paths[0] = TP_EXIT_1;
+	e_paths[1] = TP_EXIT_2;
+	e_paths[2] = NULL;
+	return (e_paths);
+}

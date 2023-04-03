@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:01:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 17:15:58 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:54:45 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,20 @@ static t_tile	*get_next_collectible(t_tile **tiles, int height, int width)
 		i ++;
 	}
 	return (NULL);
+}
+
+int		get_col_ind(t_game *game, int x, int y)
+{
+	int	i;
+
+	i = 0;
+	while (i < game->c_count)
+	{
+		if (game->cols[i].x == x && game->cols[i].y == y)
+			return (i);
+		i ++;
+	}
+	return (-1);
 }
 
 void	set_game_collectibles(t_game **game)

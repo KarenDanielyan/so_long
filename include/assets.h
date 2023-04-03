@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 14:54:18 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 21:16:54 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define TEXTURE_SIZE 48
 
-# define T_GROUND_COUNT 3
+# define T_GRND_COUNT 3
 # define TP_GROUND_1 "./assets/textures/ground/ground_1.xpm"
 # define TP_GROUND_2 "./assets/textures/ground/ground_2.xpm"
 # define TP_GROUND_3 "./assets/textures/ground/ground_3.xpm"
@@ -23,11 +23,15 @@
 # define T_WALL_COUNT 1
 # define TP_WALL "./assets/textures/obstacles/Walls.xpm"
 
+# define T_EXIT_COUNT 2
+# define TP_EXIT_1 "./assets/textures/misc/Exit_1.xpm"
+# define TP_EXIT_2 "./assets/textures/misc/Exit_2.xpm"
+
 # define T_COLL_COUNT 4
-# define TP_COLLECT_1 "./assets/textures/collectible/collectible_1.xpm"
-# define TP_COLLECT_2 "./assets/textures/collectible/collectible_2.xpm"
-# define TP_COLLECT_3 "./assets/textures/collectible/collectible_3.xpm"
-# define TP_COLLECT_4 "./assets/textures/collectible/collectible_4.xpm"
+# define TP_COLLECT_1 "./assets/textures/misc/collectible_1.xpm"
+# define TP_COLLECT_2 "./assets/textures/misc/collectible_2.xpm"
+# define TP_COLLECT_3 "./assets/textures/misc/collectible_3.xpm"
+# define TP_COLLECT_4 "./assets/textures/misc/collectible_4.xpm"
 
 # define CHAR_IDLE_COUNT 6
 # define TP_CHAR_IDLE_1 "./assets/textures/character/MC_Idle_1.xpm"
@@ -62,18 +66,20 @@
 # define CHAR_ATKU_COUNT 1
 # define CHAR_ATKD_COUNT 1
 
+# define CHAR_DIE_COUNT 1
+
 typedef struct	s_player_a
 {
-	void	**idle;
-	void	**mv_left;
-	void	**mv_right;
-	void	**mv_up;
-	void	**mv_down;
-	void	**atk_down;
-	void	**atk_up;
-	void	**atk_right;
-	void	**atk_left;
-	void	**die;
+	void	*idle[CHAR_IDLE_COUNT];
+	void	*mv_left[CHAR_MVL_COUNT];
+	void	*mv_right[CHAR_MVR_COUNT];
+	void	*mv_up[CHAR_MVUP_COUNT];
+	void	*mv_down[CHAR_MVD_COUNT];
+	void	*atk_down[CHAR_ATKD_COUNT];
+	void	*atk_up[CHAR_ATKU_COUNT];
+	void	*atk_right[CHAR_ATKR_COUNT];
+	void	*atk_left[CHAR_ATKL_COUNT];
+	void	*die[CHAR_DIE_COUNT];
 }	t_player_a;
 
 typedef struct s_enemy_a
@@ -87,11 +93,12 @@ typedef struct s_enemy_a
 
 typedef struct s_assets
 {
-	void		**ground;
-	void		*wall;
-	void		**collectible;
-	t_enemy_a	*enemy;
-	t_player_a	*mc;
+	void		*wall[T_WALL_COUNT];
+	void		*exit[T_EXIT_COUNT];
+	void		*ground[T_GRND_COUNT];
+	void		*collectible[T_COLL_COUNT];
+	t_enemy_a	enemy;
+	t_player_a	player;
 }	t_assets;
 
 void	new_assets(void *mlx, t_assets **this);

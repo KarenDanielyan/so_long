@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 16:46:03 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:42:40 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,14 @@ typedef struct	s_collectible
 	void	**textures;
 }	t_clkt;
 
+typedef struct	s_exit
+{
+	char	*is_open;
+	int		x;
+	int		y;
+	void	**textures;
+}	t_exit;
+
 /*
 *	Description: Our game instance. It contains
 *	everything we need to know to figure out status
@@ -57,6 +65,7 @@ typedef struct s_game
 	t_player	*player;
 	t_enemy		*enemy;
 	t_clkt		*cols;
+	t_exit		*exit;
 	t_assets	*assets;
 	t_map		*map;
 }	t_game;
@@ -78,5 +87,6 @@ int		read_rand(int min, int max);
 
 /* Additional Functions */
 void	set_game_collectibles(t_game **game);
+void	set_game_exit(t_game **game);
 
 #endif

@@ -91,7 +91,9 @@
     "__tree": "c",
     "map_helper.h": "c",
     "stdlib.h": "c",
-    "mlx.h": "c"
+    "mlx.h": "c",
+    "events.h": "c",
+    "assets_helper.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

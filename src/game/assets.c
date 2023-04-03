@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:58:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 15:21:03 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 21:20:28 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,33 @@ static void	set_assets(void *mlx, void **textures, char **paths)
 	}
 }
 
+static void	set_player_assets(void *mlx, t_player_a *player, t_paths_p *p_paths)
+{
+	set_assets(mlx, player->idle, p_paths->idle_paths);
+	set_assets(mlx, player->mv_up, p_paths->mv_up_paths);
+	set_assets(mlx, player->mv_down, p_paths->mv_down_paths);
+	set_assets(mlx, player->mv_left, p_paths->mv_left_paths);
+	set_assets(mlx, player->mv_right, p_paths->mv_right_paths);
+	/* TODO: Atk assets when they're ready. */
+}
+
 void	new_assets(void *mlx, t_assets **this)
 {
 	struct s_paths	p;
 
 	*this = (t_assets *)malloc(sizeof(t_assets));
-	(*this)->ground = (void **)malloc(T_GROUND_COUNT * sizeof(void *));
-	(*this)->collectible = (void **)malloc(T_COLL_COUNT * sizeof(void *));
 	p.g_paths = get_ground_paths();
 	p.w_paths = get_wall_paths();
 	p.c_paths = get_col_paths();
+	p.e_paths = get_exit_paths();
+	p.p_paths = get_player_paths();
 	set_assets(mlx, (*this)->ground, p.g_paths);
-	set_assets(mlx, &(*this)->wall, p.w_paths);
+	set_assets(mlx, (*this)->wall, p.w_paths);
 	set_assets(mlx, (*this)->collectible, p.c_paths);
+	set_assets(mlx, (*this)->exit, p.e_paths);
+	set_player_assets(mlx, &(*this)->player, p.p_paths);
 	free(p.g_paths);
 	free(p.w_paths);
 	free(p.c_paths);
+	free(p.e_paths);
 }
