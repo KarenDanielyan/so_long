@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:50:33 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 19:46:07 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 14:08:51 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	read_tiles(t_tile **tiles, char **map, int w, int h)
 		{
 			tiles[i][j].symb = map[i][j];
 			tiles[i][j].type = get_terrain(map[i][j]);
+			tiles[i][j].x = j;
+			tiles[i][j].y = i;
 			j ++;
 		}
 		i ++;

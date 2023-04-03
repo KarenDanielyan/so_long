@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 01:56:34 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 14:54:18 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,13 @@
 # define TP_GROUND_3 "./assets/textures/ground/ground_3.xpm"
 
 # define T_WALL_COUNT 1
-# define TP_WALL "./assets/textures/Wall_3-2.xpm"
+# define TP_WALL "./assets/textures/obstacles/Walls.xpm"
+
+# define T_COLL_COUNT 4
+# define TP_COLLECT_1 "./assets/textures/collectible/collectible_1.xpm"
+# define TP_COLLECT_2 "./assets/textures/collectible/collectible_2.xpm"
+# define TP_COLLECT_3 "./assets/textures/collectible/collectible_3.xpm"
+# define TP_COLLECT_4 "./assets/textures/collectible/collectible_4.xpm"
 
 # define CHAR_IDLE_COUNT 6
 # define TP_CHAR_IDLE_1 "./assets/textures/character/MC_Idle_1.xpm"
@@ -83,6 +89,7 @@ typedef struct s_assets
 {
 	void		**ground;
 	void		*wall;
+	void		**collectible;
 	t_enemy_a	*enemy;
 	t_player_a	*mc;
 }	t_assets;

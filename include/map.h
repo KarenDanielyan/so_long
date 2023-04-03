@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:51:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/02 18:32:30 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:50:41 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,8 @@ void	new_map(t_map **map, char **mp);
 void	delete_map(t_map *map);
 
 void	set_tile_textures(t_assets *assets, t_map *map);
+
+int		get_col_count(t_map	*map);
+int		get_enemy_count(t_tile **tiles);
 
 #endif

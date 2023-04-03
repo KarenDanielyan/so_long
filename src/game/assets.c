@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:58:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/02 20:38:59 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 15:21:03 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,14 @@ void	new_assets(void *mlx, t_assets **this)
 
 	*this = (t_assets *)malloc(sizeof(t_assets));
 	(*this)->ground = (void **)malloc(T_GROUND_COUNT * sizeof(void *));
-	// Where there will be more wall textures 
+	(*this)->collectible = (void **)malloc(T_COLL_COUNT * sizeof(void *));
 	p.g_paths = get_ground_paths();
 	p.w_paths = get_wall_paths();
+	p.c_paths = get_col_paths();
 	set_assets(mlx, (*this)->ground, p.g_paths);
 	set_assets(mlx, &(*this)->wall, p.w_paths);
+	set_assets(mlx, (*this)->collectible, p.c_paths);
 	free(p.g_paths);
 	free(p.w_paths);
+	free(p.c_paths);
 }

@@ -30,6 +30,11 @@ void	init_window(t_game *game)
 		while (j < game->map->width)
 		{
 			mlx_put_image_to_window(game->mlx, game->window, tiles[i][j].texture, j * TEXTURE_SIZE, i * TEXTURE_SIZE);
+			if (tiles[i][j].symb != (char)tiles[i][j].type)
+			{
+				if (tiles[i][j].symb == 'C')
+					mlx_put_image_to_window(game->mlx, game->window, game->assets->collectible[0], j * TEXTURE_SIZE, i * TEXTURE_SIZE);
+			}
 			j ++;
 		}
 		i ++;

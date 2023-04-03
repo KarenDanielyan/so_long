@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/02 18:25:14 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:46:03 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "assets.h"
 # include "player.h"
 
-# define GAME_TITLE "Realmbreak: The Lost Labyrinth"
+# define GAME_TITLE "Put Your Ad here."
 
 # ifndef BONUS
 
@@ -28,6 +28,14 @@
 
 #  define MAPSYMS "01^~CEP"
 # endif
+
+typedef struct	s_collectible
+{
+	char	is_collected;
+	int		x;
+	int		y;
+	void	**textures;
+}	t_clkt;
 
 /*
 *	Description: Our game instance. It contains
@@ -48,9 +56,11 @@ typedef struct s_game
 	void		*window;
 	t_player	*player;
 	t_enemy		*enemy;
+	t_clkt		*cols;
 	t_assets	*assets;
 	t_map		*map;
 }	t_game;
+
 
 /*
 *	Description: Our "constructor" for game structure.
@@ -65,5 +75,8 @@ void	delete_game(t_game *game);
 /* Random Generators */
 double	rand_normal(double mean, double stddev, int use_last, int seed);
 int		read_rand(int min, int max);
+
+/* Additional Functions */
+void	set_game_collectibles(t_game **game);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:27:31 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 16:02:07 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:17:25 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,6 @@ void	valid_path_check(char **map);
 *	Return Value: C-standard string with nl, or NULL on invalid fd.
 */
 char	*get_next_line(int fd);
-
-// TODO: Add flood_fill()
 
 char	**get_map(int fd);
 
