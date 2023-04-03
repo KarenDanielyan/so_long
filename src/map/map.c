@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:47:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 17:01:19 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 22:01:39 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,18 @@ void	new_map(t_map **map, char **mp)
 	(*map)->height = ft_strlen_2d((const char **)mp);
 	(*map)->width = ft_strlen(*mp);
 	(*map)->tiles = get_tiles(mp, (*map)->width, (*map)->height);
+}
+
+void	delete_map(t_map *map)
+{
+	int	i;
+
+	i = 0;
+	while (i < map->height)
+	{
+		free(*(map->tiles + i));
+		i ++;
+	}
+	free(map->tiles);
+	free(map);
 }

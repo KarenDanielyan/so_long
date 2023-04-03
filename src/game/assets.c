@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:58:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 21:20:28 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 22:07:42 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,26 @@ void	new_assets(void *mlx, t_assets **this)
 	free(p.w_paths);
 	free(p.c_paths);
 	free(p.e_paths);
+	free(p.p_paths);
+}
+
+void	delete_assets(void *mlx, t_assets *this)
+{
+	int	i;
+
+	i = 0;
+	while (i < T_GRND_COUNT)
+		mlx_destroy_image(mlx, this->ground[i++]);
+	i = 0;
+	while (i < T_COLL_COUNT)
+		mlx_destroy_image(mlx, this->collectible[i++]);
+	i = 0;
+	while (i < T_EXIT_COUNT)
+		mlx_destroy_image(mlx, this->exit[i++]);
+	i = 0;
+	while (i < T_WALL_COUNT)
+		mlx_destroy_image(mlx, this->wall[i++]);
+	i = 0;
+	while (i < CHAR_IDLE_COUNT)
+		mlx_destroy_image(mlx, this->player.idle[i++]);
 }

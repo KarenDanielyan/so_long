@@ -30,6 +30,7 @@ int	main(int ac, char **av)
 	}
 	game = parse(av[1]);
 	init_map(&game);
-	mlx_loop(game.mlx);
+	//mlx_loop(game.mlx);
+	delete_game(&game);
 	return (0);
 }

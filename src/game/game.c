@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:07:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 18:51:53 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 22:08:06 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void	new_game(t_game *game, char **map)
 
 void	delete_game(t_game *game)
 {
-	(void)game;
+	delete_map(game->map);
+	delete_assets(game->mlx, game->assets);
 }
