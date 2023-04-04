@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:58:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 13:09:08 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:03:01 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	set_assets(void *mlx, void **textures, char **paths)
 	int	i;
 
 	i = 0;
-	while (*(paths + i) && *(textures + i))
+	while (*(paths + i))
 	{
 		*(textures + i) = mlx_xpm_file_to_image(mlx, *(paths + i), &w, &h);
 		if (*(textures + i) == NULL)

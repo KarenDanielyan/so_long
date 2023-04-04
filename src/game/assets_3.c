@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 13:07:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 13:23:41 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:55:26 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,6 @@ static void	delete_env_assets(void *mlx, t_assets *this)
 	i = 0;
 	while (i < T_WALL_COUNT)
 		mlx_destroy_image(mlx, this->wall[i++]);
-	i = 0;
-	while (i < CHAR_IDLE_COUNT)
-		mlx_destroy_image(mlx, this->player.idle[i++]);
-
 }
 
 void	delete_assets(void *mlx, t_assets *this)
