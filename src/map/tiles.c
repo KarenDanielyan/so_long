@@ -6,14 +6,14 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:50:33 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 14:08:51 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:08:47 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
 #include <libft.h>
 #include <stdio.h>
-#include "map_helper.h"
+#include "map.h"
 
 static void	err_msg(int	status, const char *str)
 {

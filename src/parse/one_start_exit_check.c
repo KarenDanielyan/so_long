@@ -6,11 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:50:46 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 18:34:49 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:08:50 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse_helper.h"
+#include "parse.h"
 
 static void	check_count(int s_c, int e_c, int c_c)
 {

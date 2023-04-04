@@ -6,11 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:49:36 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 14:54:14 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:08:48 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse_helper.h"
+#include "parse.h"
 #include <libft.h>
 
 #define MAPPATH "./assets/maps"

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 12:55:31 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:25:37 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ double	rand_normal(double mean, double stddev, int use_last, int seed);
 int		read_rand(int min, int max);
 
 /* Additional Functions */
-void	set_game_collectibles(t_game **game);
-void	set_game_exit(t_game **game);
+void	new_game_collectibles(t_game **game);
+void	new_game_exit(t_game **game);
 
 #endif

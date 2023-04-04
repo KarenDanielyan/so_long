@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "parse_helper.h"
+#include "parse.h"
 
 static void	free_feed(char *line_feed[OPEN_MAX])
 {

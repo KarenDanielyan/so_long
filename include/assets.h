@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 21:16:54 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:21:34 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,14 +90,13 @@ typedef struct s_enemy_a
 	void	**die;
 }	t_enemy_a;
 
-
+/* TODO: Add enemies Later */
 typedef struct s_assets
 {
 	void		*wall[T_WALL_COUNT];
 	void		*exit[T_EXIT_COUNT];
 	void		*ground[T_GRND_COUNT];
 	void		*collectible[T_COLL_COUNT];
-	t_enemy_a	enemy;
 	t_player_a	player;
 }	t_assets;
 

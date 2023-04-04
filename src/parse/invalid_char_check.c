@@ -6,11 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:50:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 21:45:49 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:08:49 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse_helper.h"
+#include "parse.h"
 #include "game.h"
 #include <ft_printf.h>
 #include <libft.h>

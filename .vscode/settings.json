@@ -82,18 +82,15 @@
     "system_error": "c",
     "unistd.h": "c",
     "helper.h": "c",
-    "parse_helper.h": "c",
     "game.h": "c",
     "libft.h": "c",
     "player.h": "c",
     "enemy.h": "c",
     "map.h": "c",
     "__tree": "c",
-    "map_helper.h": "c",
     "stdlib.h": "c",
     "mlx.h": "c",
     "events.h": "c",
-    "assets_helper.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

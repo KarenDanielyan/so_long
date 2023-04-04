@@ -6,11 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 16:00:25 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 20:13:00 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:08:44 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_helper.h"
+#include "map.h"
 #include "game.h"
 
 t_terrain	get_terrain(char symb)

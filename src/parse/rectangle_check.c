@@ -6,11 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:53:06 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/30 19:55:49 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:08:51 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse_helper.h"
+#include "parse.h"
 
 void	rectangle_check(char **map)
 {

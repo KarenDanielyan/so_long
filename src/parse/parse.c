@@ -6,12 +6,12 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:17:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/01 23:39:55 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:08:50 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
-#include "parse_helper.h"
+#include "parse.h"
 #include "game.h"
 #include <ft_printf.h>
 

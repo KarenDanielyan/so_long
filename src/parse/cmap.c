@@ -6,11 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 19:08:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 17:44:50 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:08:48 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse_helper.h"
+#include "parse.h"
 
 static void	check_on_nl(char *line)
 {

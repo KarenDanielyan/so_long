@@ -6,12 +6,12 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:47:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 22:01:39 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:08:53 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include "map_helper.h"
+#include "map.h"
 
 
 int		get_col_count(t_map *map)
