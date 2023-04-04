@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:57:37 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 17:59:23 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 21:18:13 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ int	on_exit_keypress(int key, t_game *game)
 	}
 	return (0);
 }
-int	on_exit_destroy(int key, t_game *game)
+int	on_exit_destroy(t_game *game)
 {
-	ft_printf("Game address %p\n", game);
 	delete_game(game);
 	exit(EXIT_SUCCESS);
 	return (0);
@@ -33,6 +32,10 @@ int	on_exit_destroy(int key, t_game *game)
 
 int	print_key(int key)
 {
-	ft_printf("I pressed this key: %d\n", key);
-	return (EXIT_SUCCESS);
+	if (key != 53)
+	{
+		ft_printf("I pressed this key: %d\n", key);
+		return (EXIT_SUCCESS);
+	}
+	return (0);
 }

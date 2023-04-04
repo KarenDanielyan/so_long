@@ -27,11 +27,12 @@ int	main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 	game = parse(av[1]);
-	mlx_hook(game.window, ON_DESTROY, 1L<<2, &on_exit_keypress, &game);
-	ft_printf("My game address: %p\n", &game);
 	init_map(&game);
-	mlx_loop_hook(game.mlx, &default_loop, &game);
+	mlx_hook(game.window, ON_DESTROY, 1L<<2, &on_exit_destroy, &game);
 	mlx_hook(game.window, ON_KEYDOWN, 0<<1L, &on_exit_keypress, &game);
+	mlx_hook(game.window, ON_KEYUP, 0<<1L, &on_player_move, &game);
+	//mlx_hook(game.window, ON_KEYUP, 0<<1L, &print_key, &game);
+	mlx_loop_hook(game.mlx, &default_loop, &game);
 	mlx_loop(game.mlx);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:58:40 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 16:20:35 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 19:03:54 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ static struct s_point get_player_point(t_map *map)
 				p.y = i;
 				return (p);
 			}
+			j ++;
 		}
+		i ++;
 	}
 	return (p);
 }
