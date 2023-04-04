@@ -6,13 +6,13 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 17:46:24 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 21:33:30 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:57:54 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "events.h"
 
-void	init_actors(t_game *game, t_tile tl)
+static void	init_actors(t_game *game, t_tile tl)
 {
 	if (tl.symb == 'C')
 		mlx_put_image_to_window(game->mlx, game->window,

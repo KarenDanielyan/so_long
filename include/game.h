@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 13:25:37 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:20:44 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,18 @@
 
 #  define MAPSYMS "01^~CEP"
 # endif
+
+typedef enum	e_event
+{
+	ON_KEYDOWN = 2,
+	ON_KEYUP = 3,
+	ON_MOUSEDOWN = 4,
+	ON_MOUSEUP = 5,
+	ON_MOUSEMOVE = 6,
+	ON_EXPOSE = 12,
+	ON_DESTROY = 17,
+	NAE = 7
+}	t_event;
 
 typedef struct	s_collectible
 {
@@ -70,7 +82,6 @@ typedef struct s_game
 	t_map		*map;
 }	t_game;
 
-
 /*
 *	Description: Our "constructor" for game structure.
 *	It is setting up our game state.
@@ -88,5 +99,8 @@ int		read_rand(int min, int max);
 /* Additional Functions */
 void	new_game_collectibles(t_game **game);
 void	new_game_exit(t_game **game);
+
+
+void	new_player(t_game *game, t_player **this);
 
 #endif

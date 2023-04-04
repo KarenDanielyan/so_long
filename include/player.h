@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:51:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 19:57:50 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:29:23 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PLAYER_H
 
 # include <libft.h>
+# include "assets.h"
 
 # define START_AP	5
 
@@ -22,10 +23,10 @@
 */
 typedef struct s_player
 {
-	int		x;
-	int		y;
-	void	**textures;
-	int		ap;
+	int			x;
+	int			y;
+	t_player_a	*textures;
+	int			ap;
 }	t_player;
 
 #endif

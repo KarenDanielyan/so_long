@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
-#include <string.h>
-#include <errno.h>
+#include "game.h"
 #include "events.h"
 #include "parse.h"
 
@@ -29,8 +27,11 @@ int	main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 	game = parse(av[1]);
+	mlx_hook(game.window, ON_DESTROY, 1L<<2, &on_exit_keypress, &game);
+	ft_printf("My game address: %p\n", &game);
 	init_map(&game);
-	//mlx_loop(game.mlx);
-	delete_game(&game);
+	mlx_loop_hook(game.mlx, &default_loop, &game);
+	mlx_hook(game.window, ON_KEYDOWN, 0<<1L, &on_exit_keypress, &game);
+	mlx_loop(game.mlx);
 	return (0);
 }

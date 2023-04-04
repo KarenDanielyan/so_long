@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:07:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 13:26:58 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:33:10 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	new_game(t_game *game, char **map)
 	game->c_count = get_col_count(game->map);
 	new_game_collectibles(&game);
 	new_game_exit(&game);
+	new_player(game, &game->player);
 	set_tile_textures(game->assets, game->map);
 	game->window = mlx_new_window(game->mlx, game->w_width, game->w_height, GAME_TITLE);
 }
@@ -35,6 +36,6 @@ void	delete_game(t_game *game)
 	mlx_destroy_window(game->mlx, game->window);
 	free(game->cols);
 	free(game->exit);
+	free(game->player);
 	free(game->mlx);
-	
 }
