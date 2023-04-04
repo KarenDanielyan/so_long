@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 18:42:40 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:55:31 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct	s_collectible
 
 typedef struct	s_exit
 {
-	char	*is_open;
+	char	is_open;
 	int		x;
 	int		y;
 	void	**textures;

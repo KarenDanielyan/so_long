@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:51:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 16:50:41 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:52:06 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,9 @@ void	set_tile_textures(t_assets *assets, t_map *map);
 
 int		get_col_count(t_map	*map);
 int		get_enemy_count(t_tile **tiles);
+
+/* Helper Functions */
+t_tile	**get_tiles(char **map, int w, int h);
+t_terrain	get_terrain(char symb);
 
 #endif

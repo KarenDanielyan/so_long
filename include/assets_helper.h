@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:48:57 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 21:16:41 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/03 21:41:53 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ char		**get_col_paths(void);
 char		**get_exit_paths(void);
 t_paths_p	*get_player_paths(void);
 
-/* TODO: Add get_char_paths(), get_enemy_paths() and get_col_paths() */
+/* TODO: get_enemy_paths() */
 
 # endif
