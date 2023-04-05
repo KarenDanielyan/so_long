@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 13:21:34 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/05 18:44:20 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,33 +33,25 @@
 # define TP_COLLECT_3 "./assets/textures/misc/collectible_3.xpm"
 # define TP_COLLECT_4 "./assets/textures/misc/collectible_4.xpm"
 
-# define CHAR_IDLE_COUNT 6
+# define CHAR_IDLE_COUNT 2
 # define TP_CHAR_IDLE_1 "./assets/textures/character/MC_Idle_1.xpm"
-# define TP_CHAR_IDLE_2 "./assets/textures/character/MC_Idle_2.xpm"
-# define TP_CHAR_IDLE_3 "./assets/textures/character/MC_Idle_3.xpm"
-# define TP_CHAR_IDLE_4 "./assets/textures/character/MC_Idle_4.xpm"
-# define TP_CHAR_IDLE_5 "./assets/textures/character/MC_Idle_5.xpm"
-# define TP_CHAR_IDLE_6 "./assets/textures/character/MC_Idle_6.xpm"
+# define TP_CHAR_IDLE_2 "./assets/textures/character/MC_Idle_5.xpm"
 
-# define CHAR_MVUP_COUNT 3
+# define CHAR_MVUP_COUNT 2
 # define TP_CHAR_MVUP_1 "./assets/textures/character/MC_Run_Up_1.xpm"
 # define TP_CHAR_MVUP_2 "./assets/textures/character/MC_Run_Up_2.xpm"
-# define TP_CHAR_MVUP_3 "./assets/textures/character/MC_Run_Up_3.xpm"
 
-# define CHAR_MVD_COUNT 3
+# define CHAR_MVD_COUNT 2
 # define TP_CHAR_MVD_1 "./assets/textures/character/MC_Run_Down_1.xpm"
 # define TP_CHAR_MVD_2 "./assets/textures/character/MC_Run_Down_2.xpm"
-# define TP_CHAR_MVD_3 "./assets/textures/character/MC_Run_Down_3.xpm"
 
-# define CHAR_MVL_COUNT 3
+# define CHAR_MVL_COUNT 2
 # define TP_CHAR_MVL_1 "./assets/textures/character/MC_Run_Left_1.xpm"
 # define TP_CHAR_MVL_2 "./assets/textures/character/MC_Run_Left_2.xpm"
-# define TP_CHAR_MVL_3 "./assets/textures/character/MC_Run_Left_3.xpm"
 
-# define CHAR_MVR_COUNT 3
+# define CHAR_MVR_COUNT 2
 # define TP_CHAR_MVR_1 "./assets/textures/character/MC_Run_Right_1.xpm"
 # define TP_CHAR_MVR_2 "./assets/textures/character/MC_Run_Right_2.xpm"
-# define TP_CHAR_MVR_3 "./assets/textures/character/MC_Run_Right_3.xpm"
 
 # define CHAR_ATKL_COUNT 1
 # define CHAR_ATKR_COUNT 1

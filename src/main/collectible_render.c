@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:36:24 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 19:24:10 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/05 18:45:07 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	char_idle_loop(t_game *game)
 {
 	static int i;
 
-	if (i % 950 == 0)
+	if (i % 5000 == 0)
 		render_next_char_idle(game);
 	i ++;
 	return (EXIT_SUCCESS);
