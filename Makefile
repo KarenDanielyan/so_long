@@ -27,12 +27,12 @@ RM			=	rm -rf
 CFLAGS		=	-g -fsanitize=address -Wall -Wextra -Werror
 
 ifeq ($(PLATFORM),Linux)
-	INVOKE	=	wait_msg mlx libft printf $(NAME)
+	INVOKE	=	mlx libft printf
 	LFLAGS	=	-L./libft -lft -L./printf -lftprintf -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
 	IFLAGS	=	-I/usr/include -Imlx_linux -I./include -I./libft -I./printf/include
 endif
 ifeq ($(PLATFORM),Darwin)
-	INVOKE	=	wait_msg libft printf $(NAME)
+	INVOKE	=	libft printf
 	LFLAGS	=	-L./libft -lft -L./printf -lftprintf -lmlx -framework OpenGL -framework AppKit
 	IFLAGS	=	-I./include -I./libft -I./printf/include -I/usr/local/include
 endif
@@ -49,7 +49,7 @@ YELLOW	=	\033[33m
 BLUE	=	\033[34m
 
 # Recipies
-all:		$(INVOKE)
+all:		wait_msg $(INVOKE) $(NAME)
 
 $(BUILD):
 				@mkdir -p $(BUILD)
@@ -87,7 +87,7 @@ mlx:
 wait_msg:
 				@echo "${BLUE}Please wait for so_long to compile.${RESET}"
 
-clean:		mlx printf libft
+clean:		$(INVOKE)
 				@echo "${YELLOW}Cleaning Build...${RESET}"
 				@$(RM) $(BUILD)
 				@echo "${GREEN}Done.${RESET}"

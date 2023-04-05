@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 17:20:44 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/05 19:11:29 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@
 
 #  define MAPSYMS "01^~CEP"
 # endif
+
+
+/* Type Definitions */
 
 typedef enum	e_event
 {
@@ -82,6 +85,7 @@ typedef struct s_game
 	t_map		*map;
 }	t_game;
 
+/* Main Functions */
 /*
 *	Description: Our "constructor" for game structure.
 *	It is setting up our game state.
@@ -92,15 +96,30 @@ void	new_game(t_game *game, char **map);
 */
 void	delete_game(t_game *game);
 
+/* Additional Functions */
+void	new_game_collectibles(t_game **game);
+void	new_game_exit(t_game **game);
+void	new_player(t_game *game, t_player **this);
+
 /* Random Generators */
 double	rand_normal(double mean, double stddev, int use_last, int seed);
 int		read_rand(int min, int max);
 
-/* Additional Functions */
-void	new_game_collectibles(t_game **game);
-void	new_game_exit(t_game **game);
+/* Platform Specific Code*/
 
+# ifdef __APPLE__
 
-void	new_player(t_game *game, t_player **this);
+typedef enum	e_keycode
+{
+	W = 13,
+	A = 0,
+	S = 1,
+	D = 2,
+	ESC = 53
+}	t_code;
+
+# elif __linux__
+	/* TODO: Add Linux Keycodes */
+# endif
 
 #endif
