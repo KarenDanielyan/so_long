@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 21:12:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/06 17:32:03 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:45:53 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,23 @@ static void	on_w(t_game *game)
 	t_point		p;
 	t_tile		**tiles;
 	t_player	*player;
-	//int			i;
 
 	player = game->player;
 	tiles = game->map->tiles;
 	p.x = player->x;
 	p.y = player->y;
-	game
-	mlx_put_image_to_window(game->mlx, game->window, player->assets->mv_up[0], p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
+	mlx_put_image_to_window(game->mlx, game->window,
+		player->textures->mv_up[0], p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
+	if ((p.y - 1) >= 0 && tiles[p.y - 1][p.x].type != WALLS)
+	{
+		mlx_put_image_to_window(game->mlx, game->window,
+			tiles[p.y][p.x].texture, p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
+		mlx_put_image_to_window(game->mlx, game->window,
+			player->textures->mv_up[1], p.x * TEXTURE_SIZE, (p.y - 1) * TEXTURE_SIZE);
+		player->y = p.y - 1;
+		tiles[p.y][p.x].symb = tiles[p.y][p.x].type;
+		tiles[p.y - 1][p.x].symb = 'P';
+	}
 }
 
 int	on_player_move(int key, t_game *game)

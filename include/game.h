@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/05 19:11:29 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:05:32 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,20 @@ typedef enum	e_keycode
 }	t_code;
 
 # elif __linux__
-	/* TODO: Add Linux Keycodes */
+
+typedef enum	e_keycode
+{
+	W = 119,
+	A = 97,
+	S = 115,
+	D = 100,
+	ESC = 65307,
+	UP = 65362,
+	LEFT = 65361,
+	DOWN = 65364,
+	RIGHT = 65363
+}	t_code;
+
 # endif
 
 #endif

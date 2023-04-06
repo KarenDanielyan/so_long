@@ -29,8 +29,8 @@ int	main(int ac, char **av)
 	game = parse(av[1]);
 	init_map(&game);
 	mlx_hook(game.window, ON_DESTROY, 1L<<2, &on_exit_destroy, &game);
-	mlx_hook(game.window, ON_KEYDOWN, 0<<1L, &on_exit_keypress, &game);
-	mlx_hook(game.window, ON_KEYUP, 0<<1L, &on_player_move, &game);
+	mlx_hook(game.window, ON_KEYDOWN, 1<<0L, &on_exit_keypress, &game);
+	mlx_hook(game.window, ON_KEYUP, 1<<1L, &on_player_move, &game);
 	//mlx_hook(game.window, ON_KEYUP, 0<<1L, &print_key, &game);
 	mlx_loop_hook(game.mlx, &default_loop, &game);
 	mlx_loop(game.mlx);
