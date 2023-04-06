@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/06 18:05:32 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/06 21:50:08 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,12 @@ void	new_game_collectibles(t_game **game);
 void	new_game_exit(t_game **game);
 void	new_player(t_game *game, t_player **this);
 
+t_clkt	*get_coll_by_loc(t_clkt *cols, int count, int x, int y);
+
 /* Random Generators */
 double	rand_normal(double mean, double stddev, int use_last, int seed);
 int		read_rand(int min, int max);
+
 
 /* Platform Specific Code*/
 
