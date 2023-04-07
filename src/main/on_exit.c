@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:57:37 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/05 19:15:07 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:50:21 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	on_exit_keypress(int key, t_game *game)
 	}
 	return (EXIT_SUCCESS);
 }
+
 int	on_exit_destroy(t_game *game)
 {
 	delete_game(game);

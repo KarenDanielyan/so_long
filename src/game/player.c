@@ -6,23 +6,17 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:58:40 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 19:03:54 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 19:02:41 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-struct	s_point
+static t_point	get_player_point(t_map *map)
 {
-	int x;
-	int y;
-};
-
-static struct s_point get_player_point(t_map *map)
-{
-	int				i;
-	int				j;
-	struct s_point	p;
+	int		i;
+	int		j;
+	t_point	p;
 
 	i = 1;
 	p.x = 0;
@@ -47,7 +41,7 @@ static struct s_point get_player_point(t_map *map)
 
 void	new_player(t_game *game, t_player **this)
 {
-	struct s_point	p;
+	t_point	p;
 
 	*this = (t_player *)malloc(sizeof(t_player));
 	p = get_player_point(game->map);

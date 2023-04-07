@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:51:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/06 21:46:02 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:40:00 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,16 @@ typedef struct s_map
 	t_tile	**tiles;
 }	t_map;
 
-void	new_map(t_map **map, char **mp);
-void	delete_map(t_map *map);
+void		new_map(t_map **map, char **mp);
+void		delete_map(t_map *map);
 
-void	set_tile_textures(t_assets *assets, t_map *map);
+void		set_tile_textures(t_assets *assets, t_map *map);
 
-int		get_col_count(t_map	*map);
-int		get_enemy_count(t_tile **tiles);
+int			get_col_count(t_map	*map);
+int			get_enemy_count(t_tile **tiles);
 
 /* Helper Functions */
-t_tile	**get_tiles(char **map, int w, int h);
+t_tile		**get_tiles(char **map, int w, int h);
 t_terrain	get_terrain(char symb);
 
 #endif

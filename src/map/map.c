@@ -6,15 +6,14 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:47:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 13:08:53 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 20:02:58 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include "map.h"
 
-
-int		get_col_count(t_map *map)
+int	get_col_count(t_map *map)
 {
 	int	i;
 	int	j;

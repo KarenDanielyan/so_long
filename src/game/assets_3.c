@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 13:07:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 13:55:26 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:42:39 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static void	delete_char_assets(void *mlx, t_player_a *this)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < CHAR_IDLE_COUNT)
 		mlx_destroy_image(mlx, this->idle[i++]);

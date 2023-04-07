@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 18:41:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/31 18:48:33by kdaniely         ###   ########.fr       */
+/*   Created: 2023/04/07 18:48:57 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/04/07 18:50:02 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ int	main(int ac, char **av)
 	}
 	game = parse(av[1]);
 	init_map(&game);
-	mlx_hook(game.window, ON_DESTROY, 1L<<2, &on_exit_destroy, &game);
-	mlx_hook(game.window, ON_KEYDOWN, 1<<0L, &on_exit_keypress, &game);
-	mlx_hook(game.window, ON_KEYUP, 1<<1L, &on_player_move, &game);
-	//mlx_hook(game.window, ON_KEYUP, 0<<1L, &print_key, &game);
+	mlx_hook(game.window, ON_DESTROY, 1L << 2, &on_exit_destroy, &game);
+	mlx_hook(game.window, ON_KEYDOWN, 1 << 0L, &on_exit_keypress, &game);
+	mlx_hook(game.window, ON_KEYUP, 1 << 1L, &on_player_move, &game);
 	mlx_loop_hook(game.mlx, &default_loop, &game);
 	mlx_loop(game.mlx);
 	return (0);

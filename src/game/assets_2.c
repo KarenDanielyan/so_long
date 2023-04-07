@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 20:15:18 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/05 18:44:31 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:42:24 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	set_idle_paths(t_paths_p *paths)
 	paths->idle_paths[2] = NULL;
 }
 
-static void set_mv_paths(t_paths_p *paths)
+static void	set_mv_paths(t_paths_p *paths)
 {
 	paths->mv_up_paths[0] = TP_CHAR_MVUP_1;
 	paths->mv_up_paths[1] = TP_CHAR_MVUP_2;

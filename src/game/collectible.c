@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:01:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 13:25:26 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:44:42 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static t_tile	*get_next_collectible(t_tile **tiles, int height, int width)
 {
 	static int		i;
 	static int		j;
-
 
 	if (i == height)
 		i = 0;
@@ -35,7 +34,7 @@ static t_tile	*get_next_collectible(t_tile **tiles, int height, int width)
 	return (NULL);
 }
 
-int		get_col_ind(t_game *game, int x, int y)
+int	get_col_ind(t_game *game, int x, int y)
 {
 	int	i;
 
@@ -51,14 +50,15 @@ int		get_col_ind(t_game *game, int x, int y)
 
 void	new_game_collectibles(t_game **game)
 {
-	int	i;
-	t_tile *tl;
+	int		i;
+	t_tile	*tl;
 
 	(*game)->cols = (t_clkt *)malloc((*game)->c_count * sizeof(t_clkt));
 	i = 0;
 	while (i < (*game)->c_count)
 	{
-		tl = get_next_collectible((*game)->map->tiles, (*game)->map->height, (*game)->map->width);
+		tl = get_next_collectible((*game)->map->tiles,
+				(*game)->map->height, (*game)->map->width);
 		(*game)->cols[i].x = tl->x;
 		(*game)->cols[i].y = tl->y;
 		(*game)->cols[i].is_collected = 0;

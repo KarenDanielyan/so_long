@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 18:37:09 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 13:25:50 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:46:25 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static t_tile	*get_exit(t_map *map)
 
 void	new_game_exit(t_game **game)
 {
-	t_tile *tl;
+	t_tile	*tl;
 
 	(*game)->exit = (t_exit *)malloc(sizeof(t_exit));
 	tl = get_exit((*game)->map);

@@ -6,11 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 21:43:06 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 14:51:25 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 20:02:34 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include "events.h"
 
 t_clkt	*get_coll_by_loc(t_clkt *cols, int count, int x, int y)
 {
@@ -19,7 +19,7 @@ t_clkt	*get_coll_by_loc(t_clkt *cols, int count, int x, int y)
 	i = 0;
 	while (i < count)
 	{
-		if (x == cols[i].x && y == cols[i].y)
+		if (x == cols[i].x && y == cols[i].y && !cols[i].is_collected)
 			return (&cols[i]);
 		i ++;
 	}
@@ -38,8 +38,24 @@ void	render_image_on_tile(t_game *game, t_tile *tile, void *img)
 	mlx_put_image_to_window(game->mlx, game->window,
 		img, x * TEXTURE_SIZE, y * TEXTURE_SIZE);
 }
+
 void	render_image_on_pos(t_game *game, void *img, int x, int y)
 {
 	mlx_put_image_to_window(game->mlx, game->window,
 		img, x * TEXTURE_SIZE, y * TEXTURE_SIZE);
+}
+
+void	rerender_exit(t_game *game, int x, int y)
+{
+	if (x == game->exit->x && y == game->exit->y)
+	{
+		if (!game->exit->is_open)
+		{
+			mlx_put_image_to_window(game->mlx, game->window,
+				game->exit->textures[0], game->exit->x * TEXTURE_SIZE,
+				game->exit->y * TEXTURE_SIZE);
+		}
+		else
+			on_e_opened(game);
+	}
 }

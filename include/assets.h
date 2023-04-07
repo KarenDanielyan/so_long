@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/05 18:44:20 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:36:27 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@
 
 # define CHAR_DIE_COUNT 1
 
-typedef struct	s_player_a
+typedef struct s_player_a
 {
 	void	*idle[CHAR_IDLE_COUNT];
 	void	*mv_left[CHAR_MVL_COUNT];

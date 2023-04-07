@@ -6,13 +6,13 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:49:41 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 21:12:25 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:42:02 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "assets_helper.h"
 
-char **get_ground_paths(void)
+char	**get_ground_paths(void)
 {
 	char	**g_paths;
 
@@ -26,7 +26,7 @@ char **get_ground_paths(void)
 
 char	**get_wall_paths(void)
 {
-	char **w_paths;
+	char	**w_paths;
 
 	w_paths = (char **)malloc((T_WALL_COUNT + 1) * sizeof(char *));
 	w_paths[0] = TP_WALL;

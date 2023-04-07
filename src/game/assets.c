@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:58:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 14:03:01 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:42:58 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static void	set_assets(void *mlx, void **textures, char **paths)
 	}
 }
 
+/* TODO: Atk assets when they're ready. */
 static void	set_player_assets(void *mlx, t_player_a *player, t_paths_p *p_paths)
 {
 	set_assets(mlx, player->idle, p_paths->idle_paths);
@@ -48,7 +49,6 @@ static void	set_player_assets(void *mlx, t_player_a *player, t_paths_p *p_paths)
 	set_assets(mlx, player->mv_down, p_paths->mv_down_paths);
 	set_assets(mlx, player->mv_left, p_paths->mv_left_paths);
 	set_assets(mlx, player->mv_right, p_paths->mv_right_paths);
-	/* TODO: Atk assets when they're ready. */
 }
 
 void	new_assets(void *mlx, t_assets **this)

@@ -6,19 +6,19 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:48:57 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/03 21:41:53 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:37:21 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ASSETS_HELPER_H
 # define ASSETS_HELPER_H
 
-#include "assets.h"
-#include <mlx.h>
-#include <ft_printf.h>
-#include <stdlib.h>
+# include "assets.h"
+# include <mlx.h>
+# include <ft_printf.h>
+# include <stdlib.h>
 
-typedef struct	s_player_paths
+typedef struct s_player_paths
 {
 	char	*idle_paths[CHAR_IDLE_COUNT + 1];
 	char	*mv_left_paths[CHAR_MVL_COUNT + 1];
@@ -47,5 +47,4 @@ char		**get_exit_paths(void);
 t_paths_p	*get_player_paths(void);
 
 /* TODO: get_enemy_paths() */
-
-# endif
+#endif

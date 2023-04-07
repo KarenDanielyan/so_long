@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   collectible_render.c                               :+:      :+:    :+:   */
+/*   on_idle.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:36:24 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/05 18:45:07 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 19:59:53 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 #include <ft_printf.h>
 #include <libft.h>
 
-struct	s_point
-{
-	int x;
-	int y;
-};
-
 static void	render_next_coll(t_game *game, t_clkt *col, int ind)
 {
-	static int		*i;
-	struct s_point	p;
+	static int	*i;
+	t_point		p;
 
 	if (i == NULL)
 		i = (int *)ft_calloc(game->c_count, sizeof(int));
-	if (i[ind] == T_COLL_COUNT)
-		i[ind] = 0;
-	p.x = col->x;
-	p.y = col->y;
-	mlx_put_image_to_window(game->mlx, game->window, game->map->tiles[p.y][p.x].texture, p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
-	mlx_put_image_to_window(game->mlx, game->window, col->textures[i[ind]], p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
-	i[ind] ++;
+	if (!col->is_collected)
+	{
+		if (i[ind] == T_COLL_COUNT)
+			i[ind] = 0;
+		p.x = col->x;
+		p.y = col->y;
+		mlx_put_image_to_window(game->mlx, game->window,
+			game->map->tiles[p.y][p.x].texture,
+			p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
+		mlx_put_image_to_window(game->mlx, game->window,
+			col->textures[i[ind]], p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
+		i[ind]++;
+	}
 }
 
 int	coll_render_loop(t_game *game)
@@ -55,20 +55,24 @@ int	coll_render_loop(t_game *game)
 static void	render_next_char_idle(t_game *game)
 {
 	static int	i;
-	struct s_point	p;
+	t_point		p;
 
 	if (i == CHAR_IDLE_COUNT)
 		i = 0;
 	p.x = game->player->x;
 	p.y = game->player->y;
-	mlx_put_image_to_window(game->mlx, game->window, game->map->tiles[p.y][p.x].texture, p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
-	mlx_put_image_to_window(game->mlx, game->window, game->player->textures->idle[i], p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
+	mlx_put_image_to_window(game->mlx, game->window,
+		game->map->tiles[p.y][p.x].texture,
+		p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
+	mlx_put_image_to_window(game->mlx, game->window,
+		game->player->textures->idle[i],
+		p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
 	i ++;
 }
 
 int	char_idle_loop(t_game *game)
 {
-	static int i;
+	static int	i;
 
 	if (i % 5000 == 0)
 		render_next_char_idle(game);

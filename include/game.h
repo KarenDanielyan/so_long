@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 14:02:05 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 19:04:26 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,15 @@
 #  define MAPSYMS "01^~CEP"
 # endif
 
-
 /* Type Definitions */
 
-typedef enum	e_event
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}	t_point;
+
+typedef enum e_event
 {
 	ON_KEYDOWN = 2,
 	ON_KEYUP = 3,
@@ -44,7 +49,7 @@ typedef enum	e_event
 	NAE = 7
 }	t_event;
 
-typedef struct	s_collectible
+typedef struct s_collectible
 {
 	char	is_collected;
 	int		x;
@@ -52,7 +57,7 @@ typedef struct	s_collectible
 	void	**textures;
 }	t_clkt;
 
-typedef struct	s_exit
+typedef struct s_exit
 {
 	char	is_open;
 	int		x;
@@ -75,6 +80,9 @@ typedef struct s_game
 	int			w_height;
 	int			c_count;
 	int			e_count;
+	int			c_left;
+	int			e_left;
+	int			c_mov;
 	void		*mlx;
 	void		*window;
 	t_player	*player;
@@ -102,6 +110,7 @@ void	new_game_collectibles(t_game **game);
 void	new_player(t_game *game, t_player **this);
 void	render_image_on_tile(t_game *game, t_tile *tile, void *img);
 void	render_image_on_pos(t_game *game, void *img, int x, int y);
+void	rerender_exit(t_game *game, int x, int y);
 
 t_clkt	*get_coll_by_loc(t_clkt *cols, int count, int x, int y);
 
@@ -109,12 +118,10 @@ t_clkt	*get_coll_by_loc(t_clkt *cols, int count, int x, int y);
 double	rand_normal(double mean, double stddev, int use_last, int seed);
 int		read_rand(int min, int max);
 
-
 /* Platform Specific Code*/
-
 # ifdef __APPLE__
 
-typedef enum	e_keycode
+typedef enum e_keycode
 {
 	W = 13,
 	A = 0,
@@ -125,7 +132,7 @@ typedef enum	e_keycode
 
 # elif __linux__
 
-typedef enum	e_keycode
+typedef enum e_keycode
 {
 	W = 119,
 	A = 97,

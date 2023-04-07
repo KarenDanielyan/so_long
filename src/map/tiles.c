@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:50:33 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 13:08:47 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 20:03:51 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include "map.h"
 
-static void	err_msg(int	status, const char *str)
+static void	err_msg(int status, const char *str)
 {
 	if (status)
 	{
