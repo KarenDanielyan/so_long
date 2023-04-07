@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 21:43:06 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/06 21:59:16 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:51:25 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,22 @@ t_clkt	*get_coll_by_loc(t_clkt *cols, int count, int x, int y)
 		i ++;
 	}
 	return (NULL);
+}
+
+void	render_image_on_tile(t_game *game, t_tile *tile, void *img)
+{
+	int	x;
+	int	y;
+
+	x = tile->x;
+	y = tile->y;
+	mlx_put_image_to_window(game->mlx, game->window,
+		tile->texture, x * TEXTURE_SIZE, y * TEXTURE_SIZE);
+	mlx_put_image_to_window(game->mlx, game->window,
+		img, x * TEXTURE_SIZE, y * TEXTURE_SIZE);
+}
+void	render_image_on_pos(t_game *game, void *img, int x, int y)
+{
+	mlx_put_image_to_window(game->mlx, game->window,
+		img, x * TEXTURE_SIZE, y * TEXTURE_SIZE);
 }

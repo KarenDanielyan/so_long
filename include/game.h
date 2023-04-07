@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/06 21:50:08 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:02:05 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,11 @@ void	new_game(t_game *game, char **map);
 void	delete_game(t_game *game);
 
 /* Additional Functions */
-void	new_game_collectibles(t_game **game);
 void	new_game_exit(t_game **game);
+void	new_game_collectibles(t_game **game);
 void	new_player(t_game *game, t_player **this);
+void	render_image_on_tile(t_game *game, t_tile *tile, void *img);
+void	render_image_on_pos(t_game *game, void *img, int x, int y);
 
 t_clkt	*get_coll_by_loc(t_clkt *cols, int count, int x, int y);
 
