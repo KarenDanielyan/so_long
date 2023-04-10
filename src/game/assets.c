@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:58:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 18:42:58 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:26:49 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ static void	set_assets(void *mlx, void **textures, char **paths)
 	}
 }
 
-/* TODO: Atk assets when they're ready. */
 static void	set_player_assets(void *mlx, t_player_a *player, t_paths_p *p_paths)
 {
 	set_assets(mlx, player->idle, p_paths->idle_paths);
@@ -49,6 +48,10 @@ static void	set_player_assets(void *mlx, t_player_a *player, t_paths_p *p_paths)
 	set_assets(mlx, player->mv_down, p_paths->mv_down_paths);
 	set_assets(mlx, player->mv_left, p_paths->mv_left_paths);
 	set_assets(mlx, player->mv_right, p_paths->mv_right_paths);
+	set_assets(mlx, player->atk_down, p_paths->atk_down_paths);
+	set_assets(mlx, player->atk_up, p_paths->atk_up_paths);
+	set_assets(mlx, player->atk_left, p_paths->atk_left_paths);
+	set_assets(mlx, player->atk_right, p_paths->atk_right_paths);
 }
 
 void	new_assets(void *mlx, t_assets **this)

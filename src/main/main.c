@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 18:48:57 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 18:50:02 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/10 20:30:34 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int ac, char **av)
 	init_map(&game);
 	mlx_hook(game.window, ON_DESTROY, 1L << 2, &on_exit_destroy, &game);
 	mlx_hook(game.window, ON_KEYDOWN, 1 << 0L, &on_exit_keypress, &game);
-	mlx_hook(game.window, ON_KEYUP, 1 << 1L, &on_player_move, &game);
+	mlx_hook(game.window, ON_KEYUP, 1 << 1L, &on_key_press, &game);
 	mlx_loop_hook(game.mlx, &default_loop, &game);
 	mlx_loop(game.mlx);
 	return (0);

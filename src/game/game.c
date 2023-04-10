@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:07:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 18:46:56 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/10 20:33:28 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	new_game(t_game *game, char **map)
 	new_assets(game->mlx, &game->assets);
 	new_map(&(game->map), map);
 	game->w_height = (game->map->height * TEXTURE_SIZE);
-	game->w_width = (game->map->width * TEXTURE_SIZE);
+	game->w_width = (game->map->width * TEXTURE_SIZE) + 100;
 	game->c_count = get_col_count(game->map);
 	game->c_left = game->c_count;
 	game->c_mov = 0;

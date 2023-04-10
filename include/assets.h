@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 18:36:27 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:10:06 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,21 @@
 # define TP_CHAR_MVR_1 "./assets/textures/character/MC_Run_Right_1.xpm"
 # define TP_CHAR_MVR_2 "./assets/textures/character/MC_Run_Right_2.xpm"
 
-# define CHAR_ATKL_COUNT 1
-# define CHAR_ATKR_COUNT 1
-# define CHAR_ATKU_COUNT 1
-# define CHAR_ATKD_COUNT 1
+# define CHAR_ATKU_COUNT 2
+# define TP_CHAR_ATKU_1 "./assets/textures/character/MC_Atk_Up_1.xpm"
+# define TP_CHAR_ATKU_2 "./assets/textures/character/MC_Atk_Up_2.xpm"
+
+# define CHAR_ATKD_COUNT 2
+# define TP_CHAR_ATKD_1 "./assets/textures/character/MC_Atk_Down_1.xpm"
+# define TP_CHAR_ATKD_2 "./assets/textures/character/MC_Atk_Down_2.xpm"
+
+# define CHAR_ATKL_COUNT 2
+# define TP_CHAR_ATKL_1 "./assets/textures/character/MC_Atk_Left_1.xpm"
+# define TP_CHAR_ATKL_2 "./assets/textures/character/MC_Atk_Left_2.xpm"
+
+# define CHAR_ATKR_COUNT 2
+# define TP_CHAR_ATKR_1 "./assets/textures/character/MC_Atk_Right_1.xpm"
+# define TP_CHAR_ATKR_2 "./assets/textures/character/MC_Atk_Right_2.xpm"
 
 # define CHAR_DIE_COUNT 1
 

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 20:15:18 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 18:42:24 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:12:12 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,18 @@ static void	set_mv_paths(t_paths_p *paths)
 
 static void	set_atk_paths(t_paths_p *paths)
 {
-	paths->atk_up_paths[0] = NULL;
-	paths->atk_up_paths[1] = NULL;
-	paths->atk_down_paths[0] = NULL;
-	paths->atk_down_paths[1] = NULL;
-	paths->atk_left_paths[0] = NULL;
-	paths->atk_left_paths[1] = NULL;
-	paths->atk_right_paths[0] = NULL;
-	paths->atk_right_paths[1] = NULL;
+	paths->atk_up_paths[0] = TP_CHAR_ATKU_1;
+	paths->atk_up_paths[1] = TP_CHAR_ATKU_2;
+	paths->atk_down_paths[0] = TP_CHAR_ATKD_1;
+	paths->atk_down_paths[1] = TP_CHAR_ATKD_2;
+	paths->atk_left_paths[0] = TP_CHAR_ATKL_1;
+	paths->atk_left_paths[1] = TP_CHAR_ATKL_2;
+	paths->atk_right_paths[0] = TP_CHAR_ATKR_1;
+	paths->atk_right_paths[1] = TP_CHAR_ATKR_2;
+	paths->atk_up_paths[2] = NULL;
+	paths->atk_down_paths[2] = NULL;
+	paths->atk_left_paths[2] = NULL;
+	paths->atk_right_paths[2] = NULL;
 }
 
 t_paths_p	*get_player_paths(void)

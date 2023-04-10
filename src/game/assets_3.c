@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 13:07:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 18:42:39 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:28:26 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,22 @@ static void	delete_char_assets(void *mlx, t_player_a *this)
 	i = 0;
 	while (i < CHAR_IDLE_COUNT)
 		mlx_destroy_image(mlx, this->idle[i++]);
-	i = 0;
-	while (i < CHAR_MVL_COUNT)
-		mlx_destroy_image(mlx, this->mv_left[i++]);
-	i = 0;
-	while (i < CHAR_MVR_COUNT)
-		mlx_destroy_image(mlx, this->mv_right[i++]);
-	i = 0;
-	while (i < CHAR_MVD_COUNT)
-		mlx_destroy_image(mlx, this->mv_down[i++]);
-	i = 0;
-	while (i < CHAR_MVUP_COUNT)
-		mlx_destroy_image(mlx, this->mv_up[i++]);
+	mlx_destroy_image(mlx, this->mv_left[0]);
+	mlx_destroy_image(mlx, this->mv_left[1]);
+	mlx_destroy_image(mlx, this->mv_right[0]);
+	mlx_destroy_image(mlx, this->mv_right[1]);
+	mlx_destroy_image(mlx, this->mv_down[0]);
+	mlx_destroy_image(mlx, this->mv_down[1]);
+	mlx_destroy_image(mlx, this->mv_up[0]);
+	mlx_destroy_image(mlx, this->mv_up[1]);
+	mlx_destroy_image(mlx, this->atk_down[0]);
+	mlx_destroy_image(mlx, this->atk_down[1]);
+	mlx_destroy_image(mlx, this->atk_up[0]);
+	mlx_destroy_image(mlx, this->atk_up[1]);
+	mlx_destroy_image(mlx, this->atk_left[0]);
+	mlx_destroy_image(mlx, this->atk_left[1]);
+	mlx_destroy_image(mlx, this->atk_right[0]);
+	mlx_destroy_image(mlx, this->atk_right[1]);
 }
 
 static void	delete_env_assets(void *mlx, t_assets *this)

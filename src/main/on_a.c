@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 19:03:17 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 19:59:09 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/10 18:21:35 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	after_a(t_game *game, t_tile **tiles, t_point p)
 		tiles[p.y][p.x - 1].symb = 'P';
 }
 
-void	on_a(t_game *game)
+int	on_a(t_game *game)
 {
 	t_point	p;
 	t_tile	**tiles;
@@ -45,5 +45,7 @@ void	on_a(t_game *game)
 			game->player->textures->mv_left[1]);
 		game->player->x = p.x - 1;
 		after_a(game, tiles, p);
+		return (1);
 	}
+	return (0);
 }
