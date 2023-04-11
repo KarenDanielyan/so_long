@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 17:40:21 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/10 20:26:14 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:33:57 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		on_s(t_game *game);
 int		on_d(t_game *game);
 
 int		coll_render_loop(t_game *game);
+int		enemy_idle_loop(t_game *game);
 int		char_idle_loop(t_game *game);
 int		default_loop(t_game *game);
 int		on_e_opened(t_game *game);

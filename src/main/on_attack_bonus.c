@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   on_attack.c                                        :+:      :+:    :+:   */
+/*   on_attack_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 18:13:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/10 20:51:13 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:54:49 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ static void	on_up(t_game *game)
 static void	on_down(t_game *game)
 {
 	t_tile *player_loc;
+	int	i;
 
 	player_loc = &game->map->tiles[game->player->y][game->player->x];
+	i = 0;
 	render_image_on_tile(game, player_loc, game->player->textures->atk_down[0]);
 	render_image_on_tile(game, player_loc, game->player->textures->atk_down[1]);
 }

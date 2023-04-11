@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/10 20:47:44 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:48:23 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,13 @@
 # define GAME_H
 
 # include <mlx.h>
+# include <libft.h>
 # include "map.h"
-# include "enemy.h"
 # include "assets.h"
-# include "player.h"
 
 # define GAME_TITLE "Put Your Ad here."
-
-# ifndef BONUS
-
-#  define MAPSYMS "01CEP"
-# else
-
-#  define MAPSYMS "01^~CEP"
-# endif
+# define MAPSYMS "01CEP"
+# define PLAYER_AP 6
 
 /* Type Definitions */
 
@@ -66,6 +59,28 @@ typedef struct s_exit
 }	t_exit;
 
 /*
+*	Description: This is our playable actor class.
+*/
+typedef struct s_player
+{
+	int			x;
+	int			y;
+	int			ap;
+	t_player_a	*textures;
+}	t_player;
+
+/*
+*	Descritpion: This is our enemy actor class.
+*/
+typedef struct s_enemy
+{
+	int		x;
+	int		y;
+	int		is_killed;
+	void	**textures;
+}	t_enemy;
+
+/*
 *	Description: Our game instance. It contains
 *	everything we need to know to figure out status
 *	of our game. There is only one game instance in our
@@ -93,6 +108,8 @@ typedef struct s_game
 	t_map		*map;
 }	t_game;
 
+
+
 /* Main Functions */
 /*
 *	Description: Our "constructor" for game structure.
@@ -108,9 +125,13 @@ void	delete_game(t_game *game);
 void	new_game_exit(t_game **game);
 void	new_game_collectibles(t_game **game);
 void	new_player(t_game *game, t_player **this);
+void	new_enemy(t_enemy *this, t_game *game);
+
 void	render_image_on_tile(t_game *game, t_tile *tile, void *img);
 void	render_image_on_pos(t_game *game, void *img, int x, int y);
 void	rerender_exit(t_game *game, int x, int y);
+
+void	delete_enemy(t_enemy *this, t_game *game);
 
 t_clkt	*get_coll_by_loc(t_clkt *cols, int count, int x, int y);
 
