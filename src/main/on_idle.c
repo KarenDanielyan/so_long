@@ -6,13 +6,12 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:36:24 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 19:59:53 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 18:47:30 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "events.h"
 #include <ft_printf.h>
-#include <libft.h>
 
 static void	render_next_coll(t_game *game, t_clkt *col, int ind)
 {
@@ -82,5 +81,6 @@ int	char_idle_loop(t_game *game)
 
 int	default_loop(t_game *game)
 {
-	return (char_idle_loop(game) & coll_render_loop(game));
+	return (char_idle_loop(game) & coll_render_loop(game)
+			& enemy_idle_loop(game));
 }
