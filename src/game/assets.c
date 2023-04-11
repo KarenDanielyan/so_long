@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:58:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/10 17:26:49 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:50:58 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,12 @@ static void	set_player_assets(void *mlx, t_player_a *player, t_paths_p *p_paths)
 	set_assets(mlx, player->atk_right, p_paths->atk_right_paths);
 }
 
+static void	set_enemy_assets(void *mlx, t_enemy_a *enemy, t_paths_e *e_paths)
+{
+	set_assets(mlx, enemy->idle, e_paths->idle_paths);
+	set_assets(mlx, enemy->die, e_paths->die_paths);
+}
+
 void	new_assets(void *mlx, t_assets **this)
 {
 	struct s_paths	p;
@@ -64,14 +70,17 @@ void	new_assets(void *mlx, t_assets **this)
 	p.c_paths = get_col_paths();
 	p.e_paths = get_exit_paths();
 	p.p_paths = get_player_paths();
+	p.en_paths = get_enemy_paths();
 	set_assets(mlx, (*this)->ground, p.g_paths);
 	set_assets(mlx, (*this)->wall, p.w_paths);
 	set_assets(mlx, (*this)->collectible, p.c_paths);
 	set_assets(mlx, (*this)->exit, p.e_paths);
 	set_player_assets(mlx, &(*this)->player, p.p_paths);
+	set_enemy_assets(mlx, &(*this)->enemy, p.en_paths);
 	free(p.g_paths);
 	free(p.w_paths);
 	free(p.c_paths);
 	free(p.e_paths);
 	free(p.p_paths);
+	free(p.en_paths);
 }

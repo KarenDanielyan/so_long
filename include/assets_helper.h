@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:48:57 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 18:37:21 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:45:22 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,19 @@ typedef struct s_player_paths
 	char	*atk_down_paths[CHAR_ATKD_COUNT + 1];
 }	t_paths_p;
 
+typedef struct s_paths_e
+{
+	char *idle_paths[ENEMY_IDLE_COUNT + 1];
+	char *die_paths[ENEMY_DIE_COUNT + 1];
+}	t_paths_e;
+
 struct	s_paths
 {
 	char		**g_paths;
 	char		**w_paths;
 	char		**c_paths;
 	char		**e_paths;
+	t_paths_e	*en_paths;
 	t_paths_p	*p_paths;
 };
 
@@ -45,6 +52,7 @@ char		**get_wall_paths(void);
 char		**get_col_paths(void);
 char		**get_exit_paths(void);
 t_paths_p	*get_player_paths(void);
+t_paths_e	*get_enemy_paths(void);
 
 /* TODO: get_enemy_paths() */
 #endif

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 15:48:23 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 18:37:04 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 # include "assets.h"
 
 # define GAME_TITLE "Put Your Ad here."
-# define MAPSYMS "01CEP"
+# define EVENT_WINDOW_SIZE 150
+# define MAPSYMS "01CEeP"
 # define PLAYER_AP 6
 
 /* Type Definitions */
@@ -74,10 +75,10 @@ typedef struct s_player
 */
 typedef struct s_enemy
 {
-	int		x;
-	int		y;
-	int		is_killed;
-	void	**textures;
+	int			x;
+	int			y;
+	int			is_killed;
+	t_enemy_a	*textures;
 }	t_enemy;
 
 /*
@@ -122,16 +123,16 @@ void	new_game(t_game *game, char **map);
 void	delete_game(t_game *game);
 
 /* Additional Functions */
+void	new_enemies(t_game **game);
 void	new_game_exit(t_game **game);
 void	new_game_collectibles(t_game **game);
 void	new_player(t_game *game, t_player **this);
-void	new_enemy(t_enemy *this, t_game *game);
 
 void	render_image_on_tile(t_game *game, t_tile *tile, void *img);
 void	render_image_on_pos(t_game *game, void *img, int x, int y);
 void	rerender_exit(t_game *game, int x, int y);
 
-void	delete_enemy(t_enemy *this, t_game *game);
+void	delete_enemies(t_enemy *this, t_game *game);
 
 t_clkt	*get_coll_by_loc(t_clkt *cols, int count, int x, int y);
 

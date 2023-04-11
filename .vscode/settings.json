@@ -91,7 +91,8 @@
     "stdlib.h": "c",
     "mlx.h": "c",
     "events.h": "c",
-    "assets.h": "c"
+    "assets.h": "c",
+    "assets_helper.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

@@ -6,12 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:01:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 18:44:42 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:13:50 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
-#include <stdlib.h>
 
 static t_tile	*get_next_collectible(t_tile **tiles, int height, int width)
 {

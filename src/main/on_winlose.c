@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:42:19 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 20:01:56 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:54:16 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	on_endgame(t_game *game)
 		&& (ext->x == player->x) && (ext->y == player->y))
 	{
 		ft_printf("Good Job :)\n");
+		delete_game(game);
 		exit(EXIT_SUCCESS);
 	}
 }

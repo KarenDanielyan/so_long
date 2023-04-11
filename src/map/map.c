@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:47:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 20:02:58 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:12:29 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,28 @@ int	get_col_count(t_map *map)
 		while (j < map->width)
 		{
 			if (map->tiles[i][j].symb == 'C')
+				res ++;
+			j ++;
+		}
+		i ++;
+	}
+	return (res);
+}
+
+int	get_en_count(t_map *map)
+{
+	int	i;
+	int	j;
+	int	res;
+
+	i = 1;
+	res = 0;
+	while (i < map->height)
+	{
+		j = 1;
+		while (j < map->width)
+		{
+			if (map->tiles[i][j].symb == 'e')
 				res ++;
 			j ++;
 		}

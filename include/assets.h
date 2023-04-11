@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/10 17:10:06 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:49:50 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,21 @@
 # define TP_CHAR_ATKR_1 "./assets/textures/character/MC_Atk_Right_1.xpm"
 # define TP_CHAR_ATKR_2 "./assets/textures/character/MC_Atk_Right_2.xpm"
 
-# define CHAR_DIE_COUNT 1
+# define ENEMY_IDLE_COUNT 8
+# define TP_ENEMY_IDLE_1 "./assets/textures/slime/slime_idle_1.xpm"
+# define TP_ENEMY_IDLE_2 "./assets/textures/slime/slime_idle_2.xpm"
+# define TP_ENEMY_IDLE_3 "./assets/textures/slime/slime_idle_3.xpm"
+# define TP_ENEMY_IDLE_4 "./assets/textures/slime/slime_idle_4.xpm"
+# define TP_ENEMY_IDLE_5 "./assets/textures/slime/slime_idle_5.xpm"
+# define TP_ENEMY_IDLE_6 "./assets/textures/slime/slime_idle_6.xpm"
+# define TP_ENEMY_IDLE_7 "./assets/textures/slime/slime_idle_7.xpm"
+# define TP_ENEMY_IDLE_8 "./assets/textures/slime/slime_idle_8.xpm"
+
+# define ENEMY_DIE_COUNT 4
+# define TP_ENEMY_DIE_1 "./assets/textures/slime/slime_die_1.xpm"
+# define TP_ENEMY_DIE_2 "./assets/textures/slime/slime_die_2.xpm"
+# define TP_ENEMY_DIE_3 "./assets/textures/slime/slime_die_3.xpm"
+# define TP_ENEMY_DIE_4 "./assets/textures/slime/slime_die_4.xpm"
 
 typedef struct s_player_a
 {
@@ -82,18 +96,14 @@ typedef struct s_player_a
 	void	*atk_up[CHAR_ATKU_COUNT];
 	void	*atk_right[CHAR_ATKR_COUNT];
 	void	*atk_left[CHAR_ATKL_COUNT];
-	void	*die[CHAR_DIE_COUNT];
 }	t_player_a;
 
 typedef struct s_enemy_a
 {
-	void	**idle;
-	void	**mv;
-	void	**defend;
-	void	**die;
+	void	*idle[ENEMY_IDLE_COUNT];
+	void	*die[ENEMY_DIE_COUNT];
 }	t_enemy_a;
 
-/* TODO: Add enemies Later */
 typedef struct s_assets
 {
 	void		*wall[T_WALL_COUNT];
@@ -101,6 +111,7 @@ typedef struct s_assets
 	void		*ground[T_GRND_COUNT];
 	void		*collectible[T_COLL_COUNT];
 	t_player_a	player;
+	t_enemy_a	enemy;
 }	t_assets;
 
 void	new_assets(void *mlx, t_assets **this);

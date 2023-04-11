@@ -6,13 +6,12 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 13:07:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/10 17:28:26 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:53:44 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-/* TODO: Add mlx_destroy for attack sprites when you will add them. */
 static void	delete_char_assets(void *mlx, t_player_a *this)
 {
 	int	i;
@@ -38,6 +37,18 @@ static void	delete_char_assets(void *mlx, t_player_a *this)
 	mlx_destroy_image(mlx, this->atk_right[1]);
 }
 
+static void	delete_enemy_assets(void *mlx, t_enemy_a *this)
+{
+	int	i;
+
+	i = 0;
+	while (i < ENEMY_IDLE_COUNT)
+		mlx_destroy_image(mlx, this->idle[i++]);
+	i = 0;
+	while (i < ENEMY_DIE_COUNT)
+		mlx_destroy_image(mlx, this->die[i++]);
+}
+
 static void	delete_env_assets(void *mlx, t_assets *this)
 {
 	int	i;
@@ -60,5 +71,6 @@ void	delete_assets(void *mlx, t_assets *this)
 {
 	delete_env_assets(mlx, this);
 	delete_char_assets(mlx, &this->player);
+	delete_enemy_assets(mlx, &this->enemy);
 	free(this);
 }
