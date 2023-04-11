@@ -6,11 +6,12 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 19:03:43 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/10 18:21:17 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 21:30:34 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "events.h"
+#include <ft_printf.h>
 
 static void	after_s(t_game *game, t_tile **tiles, t_point p)
 {
@@ -20,9 +21,9 @@ static void	after_s(t_game *game, t_tile **tiles, t_point p)
 			game->c_count, p.x, (p.y + 1))->is_collected = 1;
 		game->c_left --;
 	}
-	if (tiles[p.y][p.x].symb != 'E')
+	if (tiles[p.y][p.x].symb != 'E' && tiles[p.y][p.x].symb != 7)
 		tiles[p.y][p.x].symb = tiles[p.y][p.x].type;
-	if (tiles[p.y + 1][p.x].symb != 'E')
+	if (tiles[p.y + 1][p.x].symb != 'E' && tiles[p.y + 1][p.x].symb != 7)
 		tiles[p.y + 1][p.x].symb = 'P';
 }
 

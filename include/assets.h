@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 16:49:50 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 20:37:29 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,12 @@
 # define TP_ENEMY_IDLE_7 "./assets/textures/slime/slime_idle_7.xpm"
 # define TP_ENEMY_IDLE_8 "./assets/textures/slime/slime_idle_8.xpm"
 
-# define ENEMY_DIE_COUNT 4
+# define ENEMY_DIE_COUNT 5
 # define TP_ENEMY_DIE_1 "./assets/textures/slime/slime_die_1.xpm"
 # define TP_ENEMY_DIE_2 "./assets/textures/slime/slime_die_2.xpm"
 # define TP_ENEMY_DIE_3 "./assets/textures/slime/slime_die_3.xpm"
 # define TP_ENEMY_DIE_4 "./assets/textures/slime/slime_die_4.xpm"
+# define TP_ENEMY_DIE_5 "./assets/textures/slime/slime_die_5.xpm"
 
 typedef struct s_player_a
 {

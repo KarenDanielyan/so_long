@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 19:03:17 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/10 18:21:35 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 21:31:01 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static void	after_a(t_game *game, t_tile **tiles, t_point p)
 			(p.x - 1), p.y)->is_collected = 1;
 		game->c_left --;
 	}
-	if (tiles[p.y][p.x].symb != 'E')
+	if (tiles[p.y][p.x].symb != 'E' && tiles[p.y][p.x].symb != 7)
 		tiles[p.y][p.x].symb = tiles[p.y][p.x].type;
-	if (tiles[p.y][p.x - 1].symb != 'E')
+	if (tiles[p.y][p.x - 1].symb != 'E' && tiles[p.y][p.x - 1].symb != 7)
 		tiles[p.y][p.x - 1].symb = 'P';
 }
 

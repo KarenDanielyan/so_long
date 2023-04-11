@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 18:43:52 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 18:47:01 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 21:41:30 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static void	render_next_enemy(t_game *game, t_enemy *enemy, int ind)
 
 	if (i == NULL)
 		i = (int *)ft_calloc(game->e_count, sizeof(int));
+	p.x = enemy->x;
+	p.y = enemy->y;
 	if (!enemy->is_killed)
 	{
 		if (i[ind] == ENEMY_IDLE_COUNT)
 			i[ind] = 0;
-		p.x = enemy->x;
-		p.y = enemy->y;
 		mlx_put_image_to_window(game->mlx, game->window,
 			game->map->tiles[p.y][p.x].texture,
 			p.x * TEXTURE_SIZE, p.y * TEXTURE_SIZE);
@@ -40,12 +40,15 @@ int		enemy_idle_loop(t_game *game)
 	static int	j;
 
 	i = 0;
-	while (i < game->c_count)
+	if (game->e_count != 0)
 	{
-		if (j % 1500 == 0)
-			render_next_enemy(game, &game->enemy[i], i);
-		i ++;
+		while (i < game->c_count)
+		{
+			if (j % 1500 == 0)
+				render_next_enemy(game, &game->enemy[i], i);
+			i ++;
+		}
+		j ++;
 	}
-	j ++;
 	return (EXIT_SUCCESS);
 }

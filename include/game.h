@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 18:37:04 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 21:43:14 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,8 @@ void	render_image_on_tile(t_game *game, t_tile *tile, void *img);
 void	render_image_on_pos(t_game *game, void *img, int x, int y);
 void	rerender_exit(t_game *game, int x, int y);
 
-void	delete_enemies(t_enemy *this, t_game *game);
+void	kill_enemy(t_point enemy_loc, t_game *game);
+int		get_enemy_ind(t_game *game, int x, int y);
 
 t_clkt	*get_coll_by_loc(t_clkt *cols, int count, int x, int y);
 
@@ -152,8 +153,8 @@ typedef enum e_keycode
 	ESC = 53,
 	UP = 126,
 	DOWN = 125,
-	RIGHT = 123,
-	LEFT = 124
+	RIGHT = 124,
+	LEFT = 123
 }	t_code;
 
 # elif __linux__

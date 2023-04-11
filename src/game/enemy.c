@@ -6,11 +6,12 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 15:57:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 18:40:37 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/11 20:45:19 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
+#include <ft_printf.h>
 
 static t_tile	*get_next_enemy(t_tile **tiles, int height, int width)
 {
@@ -47,21 +48,41 @@ int	get_enemy_ind(t_game *game, int x, int y)
 	return (-1);
 }
 
+void	kill_enemy(t_point p, t_game *game)
+{
+	int	i;
+	int	ind;
+	
+	ind = get_enemy_ind(game, p.x, p.y);
+	i = 0;
+	while (i < ENEMY_DIE_COUNT)
+	{
+		render_image_on_tile(game, &game->map->tiles[p.y][p.x],
+			game->enemy[ind].textures->die[i]);
+		i ++;
+	}
+	game->enemy[ind].is_killed = 1;
+	game->map->tiles[p.y][p.x].symb = 7;
+}
+
 void	new_enemies(t_game **game)
 {
 	int		i;
 	t_tile	*tl;
 
-	(*game)->enemy = (t_enemy *)malloc((*game)->e_count * sizeof(t_enemy));
-	i = 0;
-	while (i < (*game)->e_count)
+	if ((*game)->e_count != 0)
 	{
-		tl = get_next_enemy((*game)->map->tiles,
-				(*game)->map->height, (*game)->map->width);
-		(*game)->enemy[i].x = tl->x;
-		(*game)->enemy[i].y = tl->y;
-		(*game)->enemy[i].is_killed = 0;
-		(*game)->enemy[i].textures = &(*game)->assets->enemy;
-		i ++;
+		(*game)->enemy = (t_enemy *)malloc((*game)->e_count * sizeof(t_enemy));
+		i = 0;
+		while (i < (*game)->e_count)
+		{
+			tl = get_next_enemy((*game)->map->tiles,
+					(*game)->map->height, (*game)->map->width);
+			(*game)->enemy[i].x = tl->x;
+			(*game)->enemy[i].y = tl->y;
+			(*game)->enemy[i].is_killed = 0;
+			(*game)->enemy[i].textures = &(*game)->assets->enemy;
+			i ++;
+		}
 	}
 }
