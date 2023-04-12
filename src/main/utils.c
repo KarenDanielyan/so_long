@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 21:43:06 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 21:45:37 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:53:35 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,13 @@ void	rerender_exit(t_game *game, int x, int y)
 		else
 			on_e_opened(game);
 	}
-	e_ind = get_enemy_ind(game, x, y);
-	if (e_ind != -1)
+	if (game->e_count != 0)
 	{
-		mlx_put_image_to_window(game->mlx, game->window,
-			game->enemy[e_ind].textures->die[4], x * TEXTURE_SIZE, y * TEXTURE_SIZE);
+		e_ind = get_enemy_ind(game, x, y);
+		if (e_ind != -1)
+		{
+			mlx_put_image_to_window(game->mlx, game->window,
+				game->enemy[e_ind].textures->die[4], x * TEXTURE_SIZE, y * TEXTURE_SIZE);
+		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:48:57 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 16:45:22 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:39:31 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ASSETS_HELPER_H
 
 # include "assets.h"
+# include "game.h"
 # include <mlx.h>
 # include <ft_printf.h>
 # include <stdlib.h>

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 21:43:14 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:20:51 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "assets.h"
 
 # define GAME_TITLE "Put Your Ad here."
-# define EVENT_WINDOW_SIZE 150
+# define EVENT_WINDOW_SIZE 200
 # define MAPSYMS "01CEeP"
 # define PLAYER_AP 6
 

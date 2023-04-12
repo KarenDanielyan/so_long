@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 17:40:21 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 19:45:34 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 16:06:07 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 void	init_map(t_game *game);
 void	on_endgame(t_game *game);
+void	on_lose(t_game *game);
 
 int		on_w(t_game *game);
 int		on_a(t_game *game);

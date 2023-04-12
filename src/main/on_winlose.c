@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:42:19 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 16:54:16 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:52:29 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,21 @@ int	on_e_opened(t_game *game)
 			game->exit->textures[1], x * TEXTURE_SIZE, y * TEXTURE_SIZE);
 	}
 	return (EXIT_SUCCESS);
+}
+
+void	on_lose(t_game	*game)
+{
+	int	is_on_enemy;
+	
+	if (game->e_count != 0)
+	{
+		is_on_enemy = get_enemy_ind(game, game->player->x,
+			game->player->y);
+		if (is_on_enemy != -1 && game->enemy[is_on_enemy].is_killed != 1)
+		{
+			ft_printf("Slime Ate You!!!\n");
+			delete_game(game);
+			exit(EXIT_SUCCESS);
+		}
+	}
 }
