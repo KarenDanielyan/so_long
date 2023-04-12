@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:42:19 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 18:52:29 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:48:18 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ int	on_e_opened(t_game *game)
 void	on_lose(t_game	*game)
 {
 	int	is_on_enemy;
-	
+
 	if (game->e_count != 0)
 	{
 		is_on_enemy = get_enemy_ind(game, game->player->x,
-			game->player->y);
+				game->player->y);
 		if (is_on_enemy != -1 && game->enemy[is_on_enemy].is_killed != 1)
 		{
 			ft_printf("Slime Ate You!!!\n");

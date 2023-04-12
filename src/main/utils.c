@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 21:43:06 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 18:53:35 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:48:40 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	render_image_on_pos(t_game *game, void *img, int x, int y)
 void	rerender_exit(t_game *game, int x, int y)
 {
 	int	e_ind;
+
 	if (x == game->exit->x && y == game->exit->y)
 	{
 		if (!game->exit->is_open)
@@ -65,7 +66,8 @@ void	rerender_exit(t_game *game, int x, int y)
 		if (e_ind != -1)
 		{
 			mlx_put_image_to_window(game->mlx, game->window,
-				game->enemy[e_ind].textures->die[4], x * TEXTURE_SIZE, y * TEXTURE_SIZE);
+				game->enemy[e_ind].textures->die[4],
+				x * TEXTURE_SIZE, y * TEXTURE_SIZE);
 		}
 	}
 }

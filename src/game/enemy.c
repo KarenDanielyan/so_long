@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 15:57:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 20:45:19 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:55:49 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	get_enemy_ind(t_game *game, int x, int y)
 	int	i;
 
 	i = 0;
-	while (i < game->c_count)
+	while (i < game->e_count)
 	{
 		if (game->enemy[i].x == x && game->enemy[i].y == y)
 			return (i);
@@ -52,7 +52,7 @@ void	kill_enemy(t_point p, t_game *game)
 {
 	int	i;
 	int	ind;
-	
+
 	ind = get_enemy_ind(game, p.x, p.y);
 	i = 0;
 	while (i < ENEMY_DIE_COUNT)

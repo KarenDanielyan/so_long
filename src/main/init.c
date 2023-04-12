@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 17:46:24 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 20:35:21 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:42:22 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	init_actors(t_game *game, t_tile tl)
 	if (tl.symb == 'e')
 		mlx_put_image_to_window(game->mlx, game->window,
 			game->assets->enemy.idle[0],
-			tl.x * TEXTURE_SIZE, tl.y *TEXTURE_SIZE);
+			tl.x * TEXTURE_SIZE, tl.y * TEXTURE_SIZE);
 }
 
 void	init_map(t_game *game)

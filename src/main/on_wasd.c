@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 21:12:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 20:20:21 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:46:33 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	on_player_move(int key, t_game *game)
 {
-	int	rv;
+	int		rv;
 	t_point	p;
 
 	rv = 0;
@@ -46,7 +46,7 @@ int	on_key_press(int key, t_game *game)
 	char	*mov_count;
 	char	*atk_count;
 	int		rv;
-	
+
 	rv = on_player_move(key, game) | on_attack(key, game);
 	tmp = ft_itoa(game->c_mov);
 	mov_count = ft_strjoin("Mov count: ", tmp);

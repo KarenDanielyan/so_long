@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 18:13:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 15:54:10 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:51:42 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,10 @@ static void	on_right(t_game *game)
 	player_loc = &game->map->tiles[game->player->y][game->player->x];
 	p.x = player_loc->x + 1;
 	p.y = player_loc->y;
-	render_image_on_tile(game, player_loc, game->player->textures->atk_right[0]);
-	render_image_on_tile(game, player_loc, game->player->textures->atk_right[1]);
+	render_image_on_tile(game, player_loc,
+		game->player->textures->atk_right[0]);
+	render_image_on_tile(game, player_loc,
+		game->player->textures->atk_right[1]);
 	if (game->map->tiles[p.y][p.x].symb == 'e')
 		kill_enemy(p, game);
 	game->player->ap --;
@@ -87,7 +89,6 @@ int	on_attack(int key, t_game *game)
 			on_left(game);
 		if (key == RIGHT)
 			on_right(game);
-		ft_printf("AP Left: %d\n", game->player->ap);
 	}
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:58:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 19:40:15 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:41:14 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static void	set_enemy_assets(void *mlx, t_enemy_a *enemy, t_paths_e *e_paths)
 void	new_assets(void *mlx, t_assets **this)
 {
 	struct s_paths	p;
-	t_point	pos;
+	t_point			pos;
 
 	*this = (t_assets *)malloc(sizeof(t_assets));
 	p.g_paths = get_ground_paths();
@@ -79,7 +79,7 @@ void	new_assets(void *mlx, t_assets **this)
 	set_player_assets(mlx, &(*this)->player, p.p_paths);
 	set_enemy_assets(mlx, &(*this)->enemy, p.en_paths);
 	(*this)->black = mlx_xpm_file_to_image(mlx, BLACK,
-		&pos.x, &pos.y);
+			&pos.x, &pos.y);
 	free(p.g_paths);
 	free(p.w_paths);
 	free(p.c_paths);

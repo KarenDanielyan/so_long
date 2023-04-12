@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 20:20:51 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:49:41 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,6 @@ typedef struct s_game
 	t_assets	*assets;
 	t_map		*map;
 }	t_game;
-
-
 
 /* Main Functions */
 /*
