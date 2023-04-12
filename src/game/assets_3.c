@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 13:07:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 16:53:44 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 00:52:14 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ void	delete_assets(void *mlx, t_assets *this)
 	delete_env_assets(mlx, this);
 	delete_char_assets(mlx, &this->player);
 	delete_enemy_assets(mlx, &this->enemy);
+	mlx_destroy_image(mlx, this->black);
 	free(this);
 }

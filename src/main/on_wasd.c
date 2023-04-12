@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 21:12:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 20:46:33 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 00:47:58 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	on_key_press(int key, t_game *game)
 	render_image_on_pos(game, game->assets->black, game->map->width + 1, 1);
 	render_image_on_pos(game, game->assets->black, game->map->width + 2, 1);
 	mlx_string_put(game->mlx, game->window,
-		game->map->width * TEXTURE_SIZE, 0, 0x78FF00, mov_count);
+		game->map->width * TEXTURE_SIZE, 10, 0x78FF00, mov_count);
 	mlx_string_put(game->mlx, game->window,
 		game->map->width * TEXTURE_SIZE, 21, 0x78FF00, atk_count);
 	free(mov_count);

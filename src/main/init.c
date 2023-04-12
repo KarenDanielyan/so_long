@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 17:46:24 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 20:42:22 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 00:47:55 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	init_map(t_game *game)
 		i ++;
 	}
 	mlx_string_put(game->mlx, game->window,
-		game->map->width * TEXTURE_SIZE, 0, 0x78FF00, "Mov count: 0");
+		game->map->width * TEXTURE_SIZE, 10, 0x78FF00, "Mov count: 0");
 	mlx_string_put(game->mlx, game->window,
 		game->map->width * TEXTURE_SIZE, 21, 0x78FF00, "Atk count: 6");
 }

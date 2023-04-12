@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:07:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 19:43:57 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 00:54:06 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	delete_game(t_game *game)
 	free(game->cols);
 	free(game->exit);
 	free(game->player);
-	free(game->enemy);
+	if (game->e_count != 0)
+		free(game->enemy);
 	free(game->mlx);
 }

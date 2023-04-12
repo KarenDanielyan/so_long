@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 19:41:15 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 00:45:40 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@
 # define TP_ENEMY_DIE_4 "./assets/textures/slime/slime_die_4.xpm"
 # define TP_ENEMY_DIE_5 "./assets/textures/slime/slime_die_5.xpm"
 
-# define BLACK "/Users/kdaniely/So_Long/assets/textures/misc/black.xpm"
+# define BLACK "./assets/textures/misc/black.xpm"
 
 typedef struct s_player_a
 {
