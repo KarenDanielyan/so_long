@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 21:12:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/13 00:47:58 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:45:14 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,16 @@ int	on_key_press(int key, t_game *game)
 	tmp = ft_itoa(game->player->ap);
 	atk_count = ft_strjoin("Atk count: ", tmp);
 	free(tmp);
-	render_image_on_pos(game, game->assets->black, game->map->width, 0);
+	render_image_on_pos(game, game->assets->black, 0, 0);
 	render_image_on_pos(game, game->assets->black, game->map->width + 1, 0);
 	render_image_on_pos(game, game->assets->black, game->map->width + 2, 0);
 	render_image_on_pos(game, game->assets->black, game->map->width, 1);
 	render_image_on_pos(game, game->assets->black, game->map->width + 1, 1);
 	render_image_on_pos(game, game->assets->black, game->map->width + 2, 1);
 	mlx_string_put(game->mlx, game->window,
-		game->map->width * TEXTURE_SIZE, 10, 0x78FF00, mov_count);
+		game->map->width * TEXTURE_SIZE, MOVCOUNT_ROW, 0x78FF00, mov_count);
 	mlx_string_put(game->mlx, game->window,
-		game->map->width * TEXTURE_SIZE, 21, 0x78FF00, atk_count);
+		game->map->width * TEXTURE_SIZE, ATKCOUNT_ROW, 0x78FF00, atk_count);
 	free(mov_count);
 	free(atk_count);
 	return (rv);

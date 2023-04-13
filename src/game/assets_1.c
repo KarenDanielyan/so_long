@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:49:41 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/07 18:42:02 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:25:24 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,14 @@ char	**get_exit_paths(void)
 	e_paths[1] = TP_EXIT_2;
 	e_paths[2] = NULL;
 	return (e_paths);
+}
+
+char	**get_black_paths(void)
+{
+	char	**black;
+
+	black = (char **)malloc(2 * sizeof(char *));
+	black[0] = BLACK;
+	black[1] = NULL;
+	return (black);
 }

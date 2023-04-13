@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/13 00:45:40 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:29:26 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ typedef struct s_enemy_a
 
 typedef struct s_assets
 {
-	void		*black;
+	void		*black[1];
 	void		*wall[T_WALL_COUNT];
 	void		*exit[T_EXIT_COUNT];
 	void		*ground[T_GRND_COUNT];

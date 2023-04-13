@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:48:57 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 20:49:30 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:22:48 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_paths_e
 
 struct	s_paths
 {
+	char		**black;
 	char		**g_paths;
 	char		**w_paths;
 	char		**c_paths;
@@ -52,6 +53,7 @@ char		**get_ground_paths(void);
 char		**get_wall_paths(void);
 char		**get_col_paths(void);
 char		**get_exit_paths(void);
+char		**get_black_paths(void);
 t_paths_p	*get_player_paths(void);
 t_paths_e	*get_enemy_paths(void);
 

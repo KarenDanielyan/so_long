@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:58:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 20:41:14 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:24:54 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ static void	set_enemy_assets(void *mlx, t_enemy_a *enemy, t_paths_e *e_paths)
 void	new_assets(void *mlx, t_assets **this)
 {
 	struct s_paths	p;
-	t_point			pos;
 
 	*this = (t_assets *)malloc(sizeof(t_assets));
 	p.g_paths = get_ground_paths();
@@ -72,14 +71,15 @@ void	new_assets(void *mlx, t_assets **this)
 	p.e_paths = get_exit_paths();
 	p.p_paths = get_player_paths();
 	p.en_paths = get_enemy_paths();
+	p.black = get_black_paths();
 	set_assets(mlx, (*this)->ground, p.g_paths);
 	set_assets(mlx, (*this)->wall, p.w_paths);
 	set_assets(mlx, (*this)->collectible, p.c_paths);
 	set_assets(mlx, (*this)->exit, p.e_paths);
+	set_assets(mlx, (*this)->black, p.black);
 	set_player_assets(mlx, &(*this)->player, p.p_paths);
 	set_enemy_assets(mlx, &(*this)->enemy, p.en_paths);
-	(*this)->black = mlx_xpm_file_to_image(mlx, BLACK,
-			&pos.x, &pos.y);
+	free(p.black);
 	free(p.g_paths);
 	free(p.w_paths);
 	free(p.c_paths);

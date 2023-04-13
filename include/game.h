@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 20:49:41 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:30:56 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,9 @@ typedef enum e_keycode
 	LEFT = 123
 }	t_code;
 
+# define MOVCOUNT_ROW 0
+# define ATKCOUNT_ROW 21
+
 # elif __linux__
 
 typedef enum e_keycode
@@ -169,6 +172,9 @@ typedef enum e_keycode
 	RIGHT = 65363,
 	LEFT = 65361
 }	t_code;
+
+# define MOVCOUNT_ROW 10
+# define ATKCOUNT_ROW 31
 
 # endif
 
