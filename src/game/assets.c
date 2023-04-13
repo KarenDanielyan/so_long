@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:58:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/13 13:24:54 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:51:50 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	new_assets(void *mlx, t_assets **this)
 	set_assets(mlx, (*this)->wall, p.w_paths);
 	set_assets(mlx, (*this)->collectible, p.c_paths);
 	set_assets(mlx, (*this)->exit, p.e_paths);
-	set_assets(mlx, (*this)->black, p.black);
+	set_assets(mlx, &(*this)->black, p.black);
 	set_player_assets(mlx, &(*this)->player, p.p_paths);
 	set_enemy_assets(mlx, &(*this)->enemy, p.en_paths);
 	free(p.black);

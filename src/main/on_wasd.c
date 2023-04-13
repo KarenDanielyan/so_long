@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 21:12:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/13 13:45:14 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:52:20 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	on_key_press(int key, t_game *game)
 	tmp = ft_itoa(game->player->ap);
 	atk_count = ft_strjoin("Atk count: ", tmp);
 	free(tmp);
-	render_image_on_pos(game, game->assets->black, 0, 0);
+	render_image_on_pos(game, game->assets->black, game->map->width, 0);
 	render_image_on_pos(game, game->assets->black, game->map->width + 1, 0);
 	render_image_on_pos(game, game->assets->black, game->map->width + 2, 0);
 	render_image_on_pos(game, game->assets->black, game->map->width, 1);
