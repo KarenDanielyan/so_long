@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/15 22:38:03 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 23:19:17 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define GAME_H
 
 # include <mlx.h>
+# include <sys/wait.h>
 # include <libft.h>
 # include "map.h"
 # include "assets.h"

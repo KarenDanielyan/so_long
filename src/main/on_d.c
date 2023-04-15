@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 19:03:30 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 15:59:38 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/16 00:02:57 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	after_d(t_game *game, t_tile **tiles, t_point p)
 {
 	if (tiles[p.y][p.x + 1].symb == 'C')
 	{
+		make_sound(COLLECT_COIN);
 		get_coll_by_loc(game->cols, game->c_count,
 			(p.x + 1), p.y)->is_collected = 1;
 		game->c_left --;
