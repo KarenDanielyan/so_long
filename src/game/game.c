@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:07:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/15 19:52:39 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 22:49:13 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static int	audio_init(void)
 
 void	new_game(t_game *game, char **map)
 {
-	game->status = SIGEXIT;
 	game->mlx = mlx_init();
 	game->audio_pid = audio_init();
 	new_assets(game->mlx, &game->assets);

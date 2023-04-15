@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:42:19 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/15 21:33:04 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 22:44:23 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void	on_endgame(t_game *game)
 {
+	int			status;
 	t_player	*player;
 	t_exit		*ext;
 
@@ -23,9 +24,9 @@ void	on_endgame(t_game *game)
 	if (ext->is_open
 		&& (ext->x == player->x) && (ext->y == player->y))
 	{
-		game->status = WIN;
+		status = WIN;
+		write(game->write_fd, &status, sizeof(int));
 		delete_game(game);
-		// msg_window(game);
 		exit(EXIT_SUCCESS);
 	}
 }
@@ -56,6 +57,7 @@ int	on_e_opened(t_game *game)
 void	on_lose(t_game	*game)
 {
 	int	is_on_enemy;
+	int	status;
 
 	if (game->e_count != 0)
 	{
@@ -63,9 +65,9 @@ void	on_lose(t_game	*game)
 				game->player->y);
 		if (is_on_enemy != -1 && game->enemy[is_on_enemy].is_killed != 1)
 		{
-			game->status = LOSE;
+			status = LOSE;
+			write(game->write_fd, &status, sizeof(int));
 			delete_game(game);
-			// msg_window(game);
 			exit(EXIT_SUCCESS);
 		}
 	}

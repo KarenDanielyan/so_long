@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/15 20:54:25 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 22:38:03 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ typedef enum e_status
 */
 typedef struct s_game
 {
-	t_status	status;
+	int			write_fd;
 	int			audio_pid;
 	int			w_width;
 	int			w_height;
@@ -133,8 +133,8 @@ void	delete_game(t_game *game);
 
 /* Additional Functions */
 void	make_sound(char *sound);
-void	msg_window(t_game *game);
 void	new_enemies(t_game **game);
+void	msg_window(t_status status);
 void	new_game_exit(t_game **game);
 void	new_game_collectibles(t_game **game);
 void	new_player(t_game *game, t_player **this);
