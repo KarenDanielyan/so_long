@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 21:12:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/13 13:52:20 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 21:16:40 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ int	on_player_move(int key, t_game *game)
 		rv = on_d(game);
 	on_lose(game);
 	if (rv != 0)
+	{
+		make_sound(MOVE);
 		game->c_mov ++;
+	}
 	if (game->c_left == 0)
 		game->exit->is_open = 1;
 	on_e_opened(game);

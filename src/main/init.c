@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 17:46:24 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/13 13:44:07 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 17:54:10 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,21 @@ static void	init_actors(t_game *game, t_tile tl)
 			tl.x * TEXTURE_SIZE, tl.y * TEXTURE_SIZE);
 }
 
+static void	init_strings(t_game *game)
+{
+	char	*atk_count;
+	char	*join;
+
+	atk_count = ft_itoa(game->player->ap);
+	join = ft_strjoin("Atk count: ", atk_count);
+	mlx_string_put(game->mlx, game->window,
+		game->map->width * TEXTURE_SIZE, MOVCOUNT_ROW, 0x78FF00, "Mov count: 0");
+	mlx_string_put(game->mlx, game->window,
+		game->map->width * TEXTURE_SIZE, ATKCOUNT_ROW, 0x78FF00, join);
+	free(join);
+	free(atk_count);
+}
+
 void	init_map(t_game *game)
 {
 	int		i;
@@ -52,8 +67,5 @@ void	init_map(t_game *game)
 		}
 		i ++;
 	}
-	mlx_string_put(game->mlx, game->window,
-		game->map->width * TEXTURE_SIZE, MOVCOUNT_ROW, 0x78FF00, "Mov count: 0");
-	mlx_string_put(game->mlx, game->window,
-		game->map->width * TEXTURE_SIZE, ATKCOUNT_ROW, 0x78FF00, "Atk count: 6");
+	init_strings(game);
 }

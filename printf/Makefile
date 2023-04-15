@@ -24,7 +24,7 @@ IFLAGS		=	-I./include
 
 AR			=	ar rcs
 
-$(BUILD)/%.o: $(SRC)/%.c	$(DEP)
+$(BUILD)/%.o:	$(SRC)/%.c	$(DEP)
 				@$(CC) $(CFLAGS) $(IFLAGS) -c -o $@ $<
 
 all:		$(NAME)

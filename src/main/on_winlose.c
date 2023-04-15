@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:42:19 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 20:48:18 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 21:33:04 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ void	on_endgame(t_game *game)
 	if (ext->is_open
 		&& (ext->x == player->x) && (ext->y == player->y))
 	{
-		ft_printf("Good Job :)\n");
+		game->status = WIN;
 		delete_game(game);
+		// msg_window(game);
 		exit(EXIT_SUCCESS);
 	}
 }
@@ -33,9 +34,15 @@ int	on_e_opened(t_game *game)
 {
 	int	x;
 	int	y;
+	static int first_call;
 
 	if (game->c_left == 0)
 	{
+		if (first_call == 0)
+		{
+			make_sound(DOOR_OPENED);
+			first_call ++;
+		}
 		x = game->exit->x;
 		y = game->exit->y;
 		mlx_put_image_to_window(game->mlx, game->window,
@@ -56,8 +63,9 @@ void	on_lose(t_game	*game)
 				game->player->y);
 		if (is_on_enemy != -1 && game->enemy[is_on_enemy].is_killed != 1)
 		{
-			ft_printf("Slime Ate You!!!\n");
+			game->status = LOSE;
 			delete_game(game);
+			// msg_window(game);
 			exit(EXIT_SUCCESS);
 		}
 	}

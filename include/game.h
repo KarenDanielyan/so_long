@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/13 13:30:56 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 20:54:25 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@
 # include "map.h"
 # include "assets.h"
 
-# define GAME_TITLE "Put Your Ad here."
+# define GAME_TITLE "Puny excuse for a Game."
 # define EVENT_WINDOW_SIZE 200
 # define MAPSYMS "01CEeP"
-# define PLAYER_AP 6
 
 /* Type Definitions */
 
@@ -82,6 +81,16 @@ typedef struct s_enemy
 }	t_enemy;
 
 /*
+*	Description: Enumeration To describe game status.
+*/
+typedef enum e_status
+{
+	WIN = 1,
+	LOSE = 0,
+	SIGEXIT = -1,
+}	t_status;
+
+/*
 *	Description: Our game instance. It contains
 *	everything we need to know to figure out status
 *	of our game. There is only one game instance in our
@@ -92,6 +101,8 @@ typedef struct s_enemy
 */
 typedef struct s_game
 {
+	t_status	status;
+	int			audio_pid;
 	int			w_width;
 	int			w_height;
 	int			c_count;
@@ -121,6 +132,8 @@ void	new_game(t_game *game, char **map);
 void	delete_game(t_game *game);
 
 /* Additional Functions */
+void	make_sound(char *sound);
+void	msg_window(t_game *game);
 void	new_enemies(t_game **game);
 void	new_game_exit(t_game **game);
 void	new_game_collectibles(t_game **game);
@@ -142,6 +155,11 @@ int		read_rand(int min, int max);
 /* Platform Specific Code*/
 # ifdef __APPLE__
 
+#  define FREEMLX 0
+#  define MOVCOUNT_ROW 15
+#  define ATKCOUNT_ROW 34
+#  define AUDIO "/usr/bin/afplay"
+
 typedef enum e_keycode
 {
 	W = 13,
@@ -155,10 +173,12 @@ typedef enum e_keycode
 	LEFT = 123
 }	t_code;
 
-# define MOVCOUNT_ROW 0
-# define ATKCOUNT_ROW 21
-
 # elif __linux__
+
+#  define FREEMLX 1
+#  define MOVCOUNT_ROW 10
+#  define ATKCOUNT_ROW 31
+#  define AUDIO "/usr/bin/aplay"
 
 typedef enum e_keycode
 {
@@ -172,10 +192,5 @@ typedef enum e_keycode
 	RIGHT = 65363,
 	LEFT = 65361
 }	t_code;
-
-# define MOVCOUNT_ROW 10
-# define ATKCOUNT_ROW 31
-
 # endif
-
 #endif

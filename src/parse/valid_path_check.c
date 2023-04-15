@@ -6,14 +6,14 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:53:34 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/04 13:08:51 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:51:57 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 #include <libft.h>
 
-#define COLOR "0PCE"
+#define COLOR "0PCEe"
 
 struct s_loc
 {

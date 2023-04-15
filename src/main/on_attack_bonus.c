@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 18:13:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/12 20:51:42 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 19:21:00 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int	on_attack(int key, t_game *game)
 {
 	if (game->player->ap != 0)
 	{
+		make_sound(ATTACK);
 		if (key == UP)
 			on_up(game);
 		if (key == DOWN)

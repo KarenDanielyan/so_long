@@ -6,16 +6,30 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:07:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/13 17:52:11 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 19:52:39 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 #include <libft.h>
+#include <signal.h>
+
+static int	audio_init(void)
+{
+	const char	*args[3] = {AUDIO, BGRND_MUSIC, NULL};
+	int			pid;
+
+	pid = fork();
+	if (pid == 0)
+		exit(execvp(AUDIO, (char **)args));
+	return (pid);
+}
 
 void	new_game(t_game *game, char **map)
 {
+	game->status = SIGEXIT;
 	game->mlx = mlx_init();
+	game->audio_pid = audio_init();
 	new_assets(game->mlx, &game->assets);
 	new_map(&(game->map), map);
 	game->w_height = (game->map->height * TEXTURE_SIZE);
@@ -35,6 +49,9 @@ void	new_game(t_game *game, char **map)
 
 void	delete_game(t_game *game)
 {
+	kill(game->audio_pid, SIGKILL);
+	while (wait(NULL) != -1)
+		;
 	delete_map(game->map);
 	delete_assets(game->mlx, game->assets);
 	mlx_destroy_window(game->mlx, game->window);
@@ -43,5 +60,6 @@ void	delete_game(t_game *game)
 	free(game->player);
 	if (game->e_count != 0)
 		free(game->enemy);
-	free(game->mlx);
+	if (FREEMLX)
+		free(game->mlx);
 }

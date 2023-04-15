@@ -24,17 +24,17 @@ CC			=	cc
 
 RM			=	rm -rf
 
-CFLAGS		=	-g -Wall -Wextra -Werror #-fsanitize=address
+CFLAGS		=	-g -Wall -Wextra -Werror -fsanitize=address
 
 ifeq ($(PLATFORM),Linux)
-	INVOKE	=	mlx libft printf
+	INVOKE	=	libft printf mlx_linux
 	LFLAGS	=	-L./libft -lft -L./printf -lftprintf -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
 	IFLAGS	=	-I/usr/include -Imlx_linux -I./include -I./libft -I./printf/include
 endif
 ifeq ($(PLATFORM),Darwin)
-	INVOKE	=	libft printf
-	LFLAGS	=	-L./libft -lft -L./printf -lftprintf -lmlx -framework OpenGL -framework AppKit
-	IFLAGS	=	-I./include -I./libft -I./printf/include -I/usr/local/include
+	INVOKE	=	libft printf mlx_mac
+	LFLAGS	=	-L./libft -lft -L./printf -lftprintf -Lmlx_mac -lmlx -framework OpenGL -framework AppKit
+	IFLAGS	=	-I./include -I./libft -I./printf/include -Imlx_mac
 endif
 
 
@@ -81,8 +81,11 @@ libft:
 printf:
 				@$(MAKE) $(MGOALS) -C printf
 
-mlx:
+mlx_linux:
 				@$(MAKE) $(MGOALS) -C mlx_linux
+
+mlx_mac:
+				@$(MAKE) $(MGOALS) -C mlx_mac
 
 wait_msg:
 				@echo "${BLUE}Please wait for so_long to compile.${RESET}"
@@ -100,4 +103,4 @@ fclean:		printf libft
 
 re:			fclean all
 
-.PHONY:		all clean fclean re libft printf
+.PHONY:		mlx_linux mlx_mac wait_msg printf libft fclean clean all re

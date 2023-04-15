@@ -6,12 +6,17 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 01:07:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/13 13:51:10 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 21:40:01 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ASSETS_H
 # define ASSETS_H
+
+# define BGRND_MUSIC "./assets/sounds/Background.mp3"
+# define MOVE "./assets/sounds/Move.wav"
+# define ATTACK "./assets/sounds/Attack.wav"
+# define DOOR_OPENED "./assets/sounds/Door.wav"
 
 # define TEXTURE_SIZE 48
 

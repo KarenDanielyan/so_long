@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:58:40 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/11 15:48:41 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/15 17:51:28 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	new_player(t_game *game, t_player **this)
 
 	*this = (t_player *)malloc(sizeof(t_player));
 	p = get_player_point(game->map);
-	(*this)->ap = PLAYER_AP;
+	(*this)->ap = game->e_count + 2;
 	(*this)->textures = &game->assets->player;
 	(*this)->x = p.x;
 	(*this)->y = p.y;
