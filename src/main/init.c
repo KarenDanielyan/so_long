@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 17:46:24 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/15 17:54:10 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:57:16 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,11 @@ static void	init_strings(t_game *game)
 	atk_count = ft_itoa(game->player->ap);
 	join = ft_strjoin("Atk count: ", atk_count);
 	mlx_string_put(game->mlx, game->window,
-		game->map->width * TEXTURE_SIZE, MOVCOUNT_ROW, 0x78FF00, "Mov count: 0");
+		game->map->width * TEXTURE_SIZE, MOVCOUNT_ROW,
+		0x78FF00, "Mov count: 0");
 	mlx_string_put(game->mlx, game->window,
-		game->map->width * TEXTURE_SIZE, ATKCOUNT_ROW, 0x78FF00, join);
+		game->map->width * TEXTURE_SIZE, ATKCOUNT_ROW,
+		0x78FF00, join);
 	free(join);
 	free(atk_count);
 }

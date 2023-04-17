@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:42:19 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/17 12:21:40 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:00:26 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	on_endgame(t_game *game)
 
 int	on_e_opened(t_game *game)
 {
-	int	x;
-	int	y;
-	static int first_call;
+	int			x;
+	int			y;
+	static int	first_call;
 
 	if (game->c_left == 0)
 	{

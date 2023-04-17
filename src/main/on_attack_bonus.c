@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 18:13:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/16 00:05:18 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:58:23 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ static void	on_right(t_game *game)
 
 int	on_attack(int key, t_game *game)
 {
-	if (game->player->ap != 0 &&
-		(key == UP || key == DOWN
-		|| key == LEFT || key == RIGHT))
+	if (game->player->ap != 0
+		&& (key == UP || key == DOWN
+			|| key == LEFT || key == RIGHT))
 	{
 		make_sound(ATTACK);
 		if (key == UP)

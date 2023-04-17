@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:32:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/17 12:59:28 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:56:42 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,27 @@ static int	on_kpress(int key, t_win *tmp)
 	return (0);
 }
 
-static void put_message(t_status status, t_win *tmp)
+static void	put_message(t_status status, t_win *tmp)
 {
 	if (status == WIN)
 	{
 		mlx_string_put(tmp->mlx, tmp->window, 50, 25,
-				0x00FF00, "Good Job :)");
+			0x00FF00, "Good Job :)");
 	}
 	if (status == LOSE)
 	{
 		mlx_string_put(tmp->mlx, tmp->window, 50, 25,
-				0xFF0000, "Slime Ate You!!!");
+			0xFF0000, "Slime Ate You!!!");
 	}
 	if (status == SIGEXIT)
 	{
 		mlx_string_put(tmp->mlx, tmp->window, 50, 25,
-				0xFFFFFF, "Game exited by exit signal.");
+			0xFFFFFF, "Game exited by exit signal.");
 	}
 	if (status == ERROR)
 	{
 		mlx_string_put(tmp->mlx, tmp->window, 50, 25,
-				0xFF0000, "Error occured when trying to execute.");
+			0xFF0000, "Error occured when trying to execute.");
 	}
 }
 
