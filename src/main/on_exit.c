@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:57:37 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/15 22:45:52 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:21:28 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,8 @@
 
 int	on_exit_destroy(t_game *game)
 {
-	int	status;
-
-	status = SIGEXIT;
-	write(game->write_fd, &status, sizeof(int));
 	delete_game(game);
-	exit(EXIT_SUCCESS);
+	exit(SIGEXIT);
 	return (EXIT_SUCCESS);
 }
 

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:38:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/15 23:19:17 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:56:29 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,10 @@ typedef struct s_enemy
 */
 typedef enum e_status
 {
-	WIN = 1,
 	LOSE = 0,
-	SIGEXIT = -1,
+	ERROR = 1,
+	WIN = 2,
+	SIGEXIT = 255
 }	t_status;
 
 /*
@@ -102,7 +103,6 @@ typedef enum e_status
 */
 typedef struct s_game
 {
-	int			write_fd;
 	int			audio_pid;
 	int			w_width;
 	int			w_height;

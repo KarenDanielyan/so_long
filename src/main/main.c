@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 18:48:57 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/04/15 22:52:23 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:57:02 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 #include "events.h"
 #include "parse.h"
 
-static void	child(int ac, char **av, int fd[2])
+static void	child(int ac, char **av)
 {
 	t_game	game;
 
-	close(fd[0]);
-	game.write_fd = fd[1];
 	if (ac > 2 || ac == 1)
 	{
 		if (ac == 1)
@@ -41,15 +39,12 @@ int	main(int ac, char **av)
 {
 	int		pid;
 	int		status;
-	int		fd[2];
 
-	pipe(fd);
 	pid = fork();
 	if (pid == 0)
-		child(ac, av, fd);
-	close(fd[1]);
-	waitpid(pid, NULL, 0);
-	read(fd[0], &status, sizeof(int));
+		child(ac, av);
+	waitpid(pid, &status, 0);
+	status = WEXITSTATUS(status);
 	msg_window(status);
 	return (0);
 }
