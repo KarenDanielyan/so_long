@@ -8,3 +8,4 @@ toto.ber
 VarderiPartez.wav
 Background.wav
 mlx_mac/*.o
+mlx_mac/libmlx.a

@@ -54,19 +54,7 @@ all:		wait_msg $(INVOKE) $(NAME)
 $(BUILD):
 				@mkdir -p $(BUILD)
 
-$(BUILD)/%.o:	$(DIR)/main/%.c $(DEP)
-					@echo "${YELLOW}Compiling $<.${RESET}"
-					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
-
-$(BUILD)/%.o:	$(DIR)/parse/%.c $(DEP)
-					@echo "${YELLOW}Compiling $<.${RESET}"
-					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
-
-$(BUILD)/%.o:	$(DIR)/map/%.c $(DEP)
-					@echo "${YELLOW}Compiling $<.${RESET}"
-					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
-
-$(BUILD)/%.o:	$(DIR)/game/%.c $(DEP)
+$(BUILD)/%.o:	$(DIR)/*/%.c $(DEP)
 					@echo "${YELLOW}Compiling $<.${RESET}"
 					@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
